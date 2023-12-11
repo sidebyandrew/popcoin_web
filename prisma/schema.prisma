@@ -1,0 +1,62 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("POSTGRES_PRISMA_URL")
+  directUrl = env("POSTGRES_URL_NON_POOLING")
+}
+
+model user {
+  id        Int      @id @default(autoincrement())
+  authType  String
+  name      String?
+  email     String   @unique
+  image     String
+  role      String
+  createdAt DateTime @default(now())
+  event     event[]
+  profile   profile?
+}
+
+model profile {
+  id     Int    @id @default(autoincrement())
+  bio    String
+  userId Int    @unique
+  user   user   @relation(fields: [userId], references: [id])
+}
+
+model event {
+  id              Int      @id @default(autoincrement())
+  type            String
+  title           String
+  brief           String
+  description     String
+  coverImageStore String
+  coverImage      String
+  published       Boolean  @default(false)
+  startDate       DateTime @db.Timestamptz(3)
+  endDate         DateTime @db.Timestamptz(3)
+  createdAt       DateTime @default(now()) @db.Timestamptz(3)
+  updatedAt       DateTime @db.Timestamptz(3)
+  creatorId       Int
+  createdBy       user     @relation(fields: [creatorId], references: [id])
+}
+
+model product {
+  id          Int      @id @default(autoincrement())
+  name        String
+  description String
+  price       Decimal
+  image       String
+  category_id Int
+  category    category @relation(fields: [category_id], references: [id])
+}
+
+model category {
+  id          Int       @id @default(autoincrement())
+  name        String
+  description String
+  products    product[]
+}

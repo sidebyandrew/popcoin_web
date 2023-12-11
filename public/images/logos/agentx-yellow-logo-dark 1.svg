@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xl="http://www.w3.org/1999/xlink" xmlns:dc="http://purl.org/dc/elements/1.1/" version="1.1" viewBox="313 171 1585 738" width="1585" height="738">
+  <defs/>
+  <metadata> Produced by OmniGraffle 7.21.2\n2023-08-10 02:29:37 +0000</metadata>
+  <g id="agentx-yellow-logo-dark_1" fill="none" fill-opacity="1" stroke-dasharray="none" stroke="none" stroke-opacity="1">
+    <title>agentx-yellow-logo-dark 1</title>
+    <g id="agentx-yellow-logo-dark_1_Layer_1">
+      <title>Layer 1</title>
+      <g id="Graphic_9">
+        <text transform="translate(920 340.8)" fill="#f8fbfc">
+          <tspan font-family="Helvetica Neue" font-size="300" fill="#f8fbfc" x="0" y="286">AgentX</tspan>
+        </text>
+      </g>
+      <g id="Group_10">
+        <g id="Graphic_13">
+          <text transform="translate(437.5 176)" fill="#f9fafd">
+            <tspan font-family="PingFang SC" font-size="520" fill="#f9fafd" x="7958079e-19" y="551">X</tspan>
+          </text>
+        </g>
+        <g id="Graphic_12">
+          <text transform="translate(318.5 192.5)" fill="#f9fafd">
+            <tspan font-family="Helvetica Neue" font-size="500" fill="#f9fafd" x="0" y="476">{</tspan>
+          </text>
+        </g>
+        <g id="Graphic_11">
+          <text transform="translate(743.5 192.5)" fill="#f9fafd">
+            <tspan font-family="Helvetica Neue" font-size="500" fill="#f9fafd" x="0" y="476">}</tspan>
+          </text>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

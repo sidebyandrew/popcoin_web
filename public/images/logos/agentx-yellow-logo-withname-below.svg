@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xl="http://www.w3.org/1999/xlink" xmlns:dc="http://purl.org/dc/elements/1.1/" version="1.1" viewBox="87 -11 969 972" width="969" height="972">
+  <defs/>
+  <metadata> Produced by OmniGraffle 7.21.2\n2023-08-10 02:29:37 +0000</metadata>
+  <g id="agentx-yellow-logo-withname-below" fill="none" fill-opacity="1" stroke-dasharray="none" stroke="none" stroke-opacity="1">
+    <title>agentx-yellow-logo-withname-below</title>
+    <g id="agentx-yellow-logo-withname-below_Layer_1">
+      <title>Layer 1</title>
+      <g id="Graphic_2">
+        <path d="M 187 18 L 956 18 C 1010.6762 18 1055 62.32381 1055 117 L 1055 861 C 1055 915.6762 1010.6762 960 956 960 L 187 960 C 132.32381 960 88 915.6762 88 861 L 88 117 C 88 62.32381 132.32381 18 187 18 Z" fill="#ffefb7"/>
+        <path d="M 187 18 L 956 18 C 1010.6762 18 1055 62.32381 1055 117 L 1055 861 C 1055 915.6762 1010.6762 960 956 960 L 187 960 C 132.32381 960 88 915.6762 88 861 L 88 117 C 88 62.32381 132.32381 18 187 18 Z" stroke="#6d5000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+      <g id="Graphic_6">
+        <text transform="translate(390.8325 23.313953)" fill="#6d5000">
+          <tspan font-family="PingFang SC" font-size="555" fill="#6d5000" x="0" y="588">X</tspan>
+        </text>
+      </g>
+      <g id="Graphic_7">
+        <text transform="translate(197.1 -6)" fill="#6d5000">
+          <tspan font-family="Helvetica Neue" font-size="600" fill="#6d5000" x="0" y="571">{</tspan>
+        </text>
+      </g>
+      <g id="Graphic_8">
+        <text transform="translate(153.99999 736)" fill="#6d5000">
+          <tspan font-family="Helvetica Neue" font-size="118" fill="#6d5000" x="7958079e-19" y="112">AgentX Network</tspan>
+        </text>
+      </g>
+      <g id="Graphic_9">
+        <text transform="translate(746.1 -6)" fill="#6d5000">
+          <tspan font-family="Helvetica Neue" font-size="600" fill="#6d5000" x="0" y="571">}</tspan>
+        </text>
+      </g>
+    </g>
+  </g>
+</svg>

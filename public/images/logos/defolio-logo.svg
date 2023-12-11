@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xl="http://www.w3.org/1999/xlink" version="1.1" xmlns:dc="http://purl.org/dc/elements/1.1/" viewBox="-31 -14 897 897" width="897" height="897">
+  <defs>
+    <linearGradient x1="0" x2="1" id="Gradient" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#894ef8"/>
+      <stop offset=".5922409" stop-color="#5787dd"/>
+      <stop offset="1" stop-color="#00bfc0"/>
+    </linearGradient>
+    <linearGradient id="Obj_Gradient" xl:href="#Gradient" gradientTransform="translate(-65.99413 840.0125) rotate(-40) scale(1262.3135)"/>
+  </defs>
+  <metadata> Produced by OmniGraffle 7.21.2\n2023-05-06 11:32:16 +0000</metadata>
+  <g id="Circle_New_2" stroke-dasharray="none" stroke-opacity="1" stroke="none" fill="none" fill-opacity="1">
+    <title>Circle New 2</title>
+    <g id="Circle_New_2_Layer_4">
+      <title>Layer 4</title>
+      <g id="Graphic_17">
+        <path d="M 734.2835 117.52928 C 909.2391 292.48403 909.2391 576.1415 734.2835 751.09625 C 559.32874 926.0519 275.67126 926.0519 100.71651 751.09625 C -74.23914 576.1415 -74.23914 292.48403 100.71651 117.52928 C 275.67126 -57.42637 559.32874 -57.42637 734.2835 117.52928" fill="url(#Obj_Gradient)"/>
+      </g>
+      <g id="Line_33">
+        <line x1="490.4301" y1="605.0457" x2="344.5699" y2="603.46795" stroke="white" stroke-linecap="square" stroke-linejoin="miter" stroke-width="55"/>
+      </g>
+      <g id="Line_32">
+        <path d="M 144 266 C 365 357.5 384.60034 468.3101 384.60034 468.3101" stroke="white" stroke-linecap="square" stroke-linejoin="round" stroke-width="50"/>
+      </g>
+      <g id="Line_31">
+        <path d="M 681.60034 266 C 460.60034 357.5 441 468.3101 441 468.3101" stroke="white" stroke-linecap="square" stroke-linejoin="round" stroke-width="50"/>
+      </g>
+      <g id="Line_30">
+        <path d="M 73.31316 402.7356 C 294.31316 494.2356 313.9135 605.0457 313.9135 605.0457" stroke="white" stroke-linecap="square" stroke-linejoin="round" stroke-width="55"/>
+      </g>
+      <g id="Line_29">
+        <path d="M 761.6868 403.7356 C 540.68684 495.2356 521.0865 606.0457 521.0865 606.0457" stroke="white" stroke-linecap="square" stroke-linejoin="round" stroke-width="55"/>
+      </g>
+    </g>
+  </g>
+</svg>

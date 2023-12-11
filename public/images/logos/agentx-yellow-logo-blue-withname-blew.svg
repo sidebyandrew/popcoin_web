@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xl="http://www.w3.org/1999/xlink" xmlns:dc="http://purl.org/dc/elements/1.1/" version="1.1" viewBox="120 142 948 887" width="948" height="887">
+  <defs>
+    <linearGradient x1="0" x2="1" id="Gradient" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#9662d0"/>
+      <stop offset=".61" stop-color="#6c78df"/>
+      <stop offset="1" stop-color="#3a8eed"/>
+    </linearGradient>
+    <linearGradient id="Obj_Gradient" xl:href="#Gradient" gradientTransform="translate(158.73964 772.7639) rotate(-32) scale(993.6002)"/>
+  </defs>
+  <metadata> Produced by OmniGraffle 7.21.2\n2023-08-10 02:29:37 +0000</metadata>
+  <g id="agentx-yellow-logo-blue-withname-blew" fill="none" fill-opacity="1" stroke-dasharray="none" stroke="none" stroke-opacity="1">
+    <title>agentx-yellow-logo-blue-withname-blew</title>
+    <g id="agentx-yellow-logo-blue-withname-blew_Layer_1">
+      <title>Layer 1</title>
+      <g id="Graphic_8">
+        <text transform="translate(125 879.8319)" fill="#4789ea">
+          <tspan font-family="Helvetica Neue" font-size="120" fill="#4789ea" x="16.68" y="114">Agent</tspan>
+          <tspan font-family="Helvetica Neue" font-size="120" fill="#7872da" y="114">X</tspan>
+          <tspan font-family="Helvetica Neue" font-size="120" fill="#3e84c7" y="114"> </tspan>
+        </text>
+      </g>
+      <g id="Graphic_9">
+        <text transform="translate(578 879.8319)" fill="#4789ea">
+          <tspan font-family="Helvetica Neue" font-size="120" fill="#4789ea" x="16.68" y="114">Network</tspan>
+          <tspan font-family="Helvetica Neue" font-size="120" fill="#3e84c7" y="114"> </tspan>
+        </text>
+      </g>
+      <g id="Group_10">
+        <g id="Graphic_14">
+          <path d="M 316 153 L 844.1 153 C 898.7762 153 943.1 197.3238 943.1 252 L 943.1 767 C 943.1 821.6762 898.7762 866 844.1 866 L 316 866 C 261.3238 866 217 821.6762 217 767 L 217 252 C 217 197.3238 261.3238 153 316 153 Z" fill="url(#Obj_Gradient)"/>
+          <path d="M 316 153 L 844.1 153 C 898.7762 153 943.1 197.3238 943.1 252 L 943.1 767 C 943.1 821.6762 898.7762 866 844.1 866 L 316 866 C 261.3238 866 217 821.6762 217 767 L 217 252 C 217 197.3238 261.3238 153 316 153 Z" stroke="#6d5000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        </g>
+        <g id="Graphic_13">
+          <text transform="translate(420.1475 147)" fill="white">
+            <tspan font-family="PingFang SC" font-size="520" fill="white" x="7958079e-19" y="551">X</tspan>
+          </text>
+        </g>
+        <g id="Graphic_12">
+          <text transform="translate(287 168)" fill="white">
+            <tspan font-family="Helvetica Neue" font-size="500" fill="white" x="0" y="476">{</tspan>
+          </text>
+        </g>
+        <g id="Graphic_11">
+          <text transform="translate(721 168)" fill="white">
+            <tspan font-family="Helvetica Neue" font-size="500" fill="white" x="0" y="476">}</tspan>
+          </text>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
