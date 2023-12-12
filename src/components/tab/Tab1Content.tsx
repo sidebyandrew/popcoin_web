@@ -1,10 +1,13 @@
 // Tab1Content.tsx
-import EpicConferences from '@/components/home/epic-conferences';
+import SliderImage from '@/components/SliderImage';
+import UserProfile from '@/components/user/UserProfile';
 import React from 'react';
 
 const Tab1Content: React.FC = () => (
   <div>
-    <EpicConferences />
+    <UserProfile />
+
+    <SliderImage />
   </div>
 );
 
