@@ -60,30 +60,9 @@ export default function TheNavbar() {
     camera: <Camera className="text-danger" fill="currentColor" size={30} />,
   };
 
-  const searchInput = (
-    <Input
-      aria-label="Search"
-      classNames={{
-        inputWrapper: 'bg-default-100',
-        input: 'text-sm',
-      }}
-      endContent={
-        <Kbd className="hidden lg:inline-block" keys={['command']}>
-          K
-        </Kbd>
-      }
-      labelPlacement="outside"
-      placeholder="Search... "
-      startContent={
-        <SearchIcon className="pointer-events-none flex-shrink-0 text-base text-default-400" />
-      }
-      type="search"
-    />
-  );
 
   return (
-    <MagicProvider>
-      <NextUINavbar maxWidth="xl" position="sticky">
+      <NextUINavbar maxWidth="xl" position="static">
         <NavbarBrand as="li" className="max-w-fit gap-3">
           <NextLink className="flex items-center justify-start gap-1" href="/">
             <DebanLogo />
@@ -110,65 +89,6 @@ export default function TheNavbar() {
                 Spaces
               </Link>
             </NavbarItem>
-
-            <Dropdown>
-              <NavbarItem>
-                <DropdownTrigger>
-                  <Button
-                    disableRipple
-                    className="bg-transparent p-0 data-[hover=true]:bg-transparent"
-                    endContent={icons.chevron}
-                    radius="sm"
-                    variant="light"
-                  >
-                    Explore
-                  </Button>
-                </DropdownTrigger>
-              </NavbarItem>
-              <DropdownMenu
-                aria-label="ACME features"
-                className="w-[340px]"
-                itemClasses={{
-                  base: 'gap-4',
-                }}
-              >
-                <DropdownItem
-                  key="hosts"
-                  description="Browse and follow up top hosts with customized notification"
-                  startContent={<Microphone />}
-                >
-                  Hosts
-                </DropdownItem>
-                <DropdownItem
-                  key="speakers"
-                  description="Creators, pioneers, innovators, regulators, influencers and personalities"
-                  startContent={<User2 />}
-                >
-                  Speakers
-                </DropdownItem>
-                <DropdownItem
-                  key="production_ready"
-                  description="All the venues in the world, including historical evaluations and scoring"
-                  startContent={<Building2 />}
-                >
-                  Venues
-                </DropdownItem>
-                <DropdownItem
-                  key="99_uptime"
-                  description="Sharing economy, including hotel sharing and so on"
-                  startContent={<BankNotes />}
-                >
-                  Share 2 Earn
-                </DropdownItem>
-                <DropdownItem
-                  key="supreme_support"
-                  description="Automatically generate cover images according to your prompts"
-                  startContent={<Photo />}
-                >
-                  AIGC Cover Image
-                </DropdownItem>
-              </DropdownMenu>
-            </Dropdown>
           </NavbarContent>
         </div>
         {/* Menu End */}
@@ -181,7 +101,6 @@ export default function TheNavbar() {
             <ThemeSwitch />
             <I18NSwitch />
           </NavbarItem>
-          <NavbarItem className="hidden lg:flex">{searchInput}</NavbarItem>
           <NavbarItem className="hidden md:flex">
             <MagicConnect />
           </NavbarItem>
@@ -192,20 +111,6 @@ export default function TheNavbar() {
           <NavbarMenuToggle />
         </NavbarContent>
 
-        <NavbarMenu>
-          {searchInput}
-          <div className="mx-4 mt-2 flex flex-col gap-2">
-            {siteConfig.navMenuItems.map((item, index) => (
-              <NavbarMenuItem key={`${item}-${index}`}>
-                <Link color="foreground" href={item.href} size="lg">
-                  {item.label}
-                </Link>
-              </NavbarMenuItem>
-            ))}
-            <MagicConnect />
-          </div>
-        </NavbarMenu>
       </NextUINavbar>
-    </MagicProvider>
   );
 }
