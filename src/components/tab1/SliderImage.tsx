@@ -20,7 +20,7 @@ export default class SliderImage extends Component {
         <Slider {...settings}>
           <div>
             <Image
-              src="/artwork/carousel-1.jpeg"
+              src="/artwork/carousel-1.png"
               className=""
               alt=""
               width="512"
