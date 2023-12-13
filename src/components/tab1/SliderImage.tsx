@@ -13,36 +13,36 @@ export default class SliderImage extends Component {
       slidesToScroll: 1,
     };
     return (
-      <div>
+      <div className="pb-3 pt-5">
         <h2>
           <b>Hot Picks</b>
         </h2>
         <Slider {...settings}>
           <div>
             <Image
-              src="/artwork/1.jpg"
+              src="/artwork/carousel-1.jpeg"
               className=""
               alt=""
-              width="640"
-              height="36"
+              width="512"
+              height="32"
             />
           </div>
           <div>
             <Image
-              src="/artwork/2.jpg"
+              src="/artwork/carousel-2.jpeg"
               className=""
               alt=""
-              width="640"
-              height="36"
+              width="512"
+              height="32"
             />
           </div>
           <div>
             <Image
-              src="/artwork/1.jpg"
+              src="/artwork/carousel-3.jpeg"
               className=""
               alt=""
-              width="640"
-              height="36"
+              width="512"
+              height="32"
             />
           </div>
         </Slider>
