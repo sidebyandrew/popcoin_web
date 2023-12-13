@@ -38,7 +38,7 @@ export default class SliderImage extends Component {
           </div>
           <div>
             <Image
-              src="/artwork/3.jpg"
+              src="/artwork/1.jpg"
               className=""
               alt=""
               width="640"
