@@ -124,7 +124,7 @@ const users = [
     introduction: 'Make a bridge for the little monster.',
     gameUrl:
       'https://h5game-1256660609.cos.ap-guangzhou.myqcloud.com/stick/%E6%A3%8D%E5%AD%90%E8%8B%B1%E9%9B%84/web/index.html',
-    imageUrl: '/game/sticker.jpg',
+    imageUrl: '/game/colorjump.png',
   },
 
   {

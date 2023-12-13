@@ -13,6 +13,10 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      colors: {
+        black: '#000000',
+        blur: 'rgba(0, 0, 0, 0.5)', // 设置毛玻璃效果的颜色
+      },
       keyframes: {
         heartbeat: {
           '0%': { transform: 'scale(1)' },
