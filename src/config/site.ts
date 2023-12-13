@@ -1,8 +1,8 @@
 export type SiteConfig = typeof siteConfig;
 
 export const siteConfig = {
-  name: 'Deban | Social Events',
-  description: 'Deban | Social Events With Pleasure',
+  name: 'Popcoin',
+  description: 'Popcoin | Social Games With Pleasure',
   navItems: [
     {
       label: 'Events',

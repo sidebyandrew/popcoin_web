@@ -99,11 +99,11 @@ const boards: Board[] = [
 
 const Tab1Content: React.FC = () => (
   <>
-    <div className="mb-3 text-lg font-bold">Competitions</div>
+    <div className="mb-3 text-2xl font-bold">Competitions</div>
 
     <div>
       {boards.map((board) => (
-        <div key={board.id} className="flex">
+        <div key={board.id} className="flex pb-2">
           <div className="flex-item pr-3 pt-1">
             <Image src={board.image} alt="1" className="h-44 w-36" />
           </div>

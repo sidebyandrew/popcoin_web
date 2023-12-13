@@ -1,6 +1,6 @@
 import GameList from '@/components/tab1/GameList';
 import { Tab, Tabs } from '@nextui-org/react';
-const users = [
+const games = [
   {
     id: 1,
     name: 'Jump3D',
@@ -182,12 +182,12 @@ export default function GameListTab() {
       <Tabs variant={'underlined'} aria-label="Options">
         <Tab key="challenges" title="Challenges">
           <div>
-            <GameList games={users} />
+            <GameList games={games} />
           </div>
         </Tab>
         <Tab key="battles" title="PvP Battles">
           <div>
-            <GameList games={users} />
+            <GameList games={games} />
           </div>
         </Tab>
       </Tabs>
