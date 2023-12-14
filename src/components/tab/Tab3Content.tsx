@@ -59,7 +59,7 @@ const tasks: Task[] = [
 const Tab1Content: React.FC = () => (
   <>
     <Card className="max-w-[400px]">
-      <CardHeader className="gap-3">
+      <CardHeader className="gap-1">
         <div className="flex items-center  justify-between">
           <div className="text-md flex items-center  text-left font-bold">
             <div>Popcoin Points</div>
@@ -105,7 +105,6 @@ const Tab1Content: React.FC = () => (
         <div className="flex-item flex flex-col">
           <div className="whitespace-nowrap text-sm font-bold">
             {task.introduction}
-            {/*<p className="text-sm text-gray-500 ">{task?.steps}</p>*/}
           </div>
           <div className="flex text-sm text-gray-500 ">
             <Image src="/icon/pop.png" height={16} width={16} alt="pop" />
@@ -119,6 +118,14 @@ const Tab1Content: React.FC = () => (
         </div>
       </div>
     ))}
+
+    <div className="mb-20 mt-2 flex flex-col items-center justify-center">
+      <div className="text-lg font-bold">Airdrop Counting Down</div>
+      <div className="text-sm text-gray-600 dark:text-gray-500">
+        Unlock the door to a future $PPC airdrop with your Popcoin points! The
+        more points you earn, the closer you are to a big surprise!
+      </div>
+    </div>
   </>
 );
 
