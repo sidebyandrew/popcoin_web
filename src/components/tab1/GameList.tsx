@@ -18,7 +18,7 @@ const GameList: React.FC<GameListProps> = ({ games }) => {
       {games.map((game) => (
         <div key={game.id} className="flex justify-between p-1">
           <div className="flex-item pr-3 pt-1">
-            <Avatar radius="sm" src={game.imageUrl} />
+            <Avatar radius="sm" size={'lg'} src={game.imageUrl} />
           </div>
 
           <div className="flex-item flex flex-col">
@@ -26,7 +26,11 @@ const GameList: React.FC<GameListProps> = ({ games }) => {
             <div className="text-sm text-gray-500">{game.introduction}</div>
           </div>
           <div className="flex-item ml-auto">
-            <Button size="sm" color="warning" className="font-bold text-white">
+            <Button
+              size="sm"
+              color="warning"
+              className="bg-orange-700 font-bold text-white"
+            >
               Play
             </Button>
           </div>
