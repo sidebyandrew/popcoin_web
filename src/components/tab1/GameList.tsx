@@ -1,3 +1,4 @@
+import { Link } from '@nextui-org/link';
 import { Avatar, Button } from '@nextui-org/react';
 
 interface Game {
@@ -30,6 +31,8 @@ const GameList: React.FC<GameListProps> = ({ games }) => {
               size="sm"
               color="warning"
               className="bg-orange-700 font-bold text-white"
+              as={Link}
+              href={'/newchallenge/' + game.id}
             >
               Play
             </Button>
