@@ -13,7 +13,7 @@ export default class SliderImage extends Component {
       slidesToScroll: 1,
     };
     return (
-      <div className="pb-3 pt-5">
+      <div className="mx-3 pb-5 pt-4">
         <h2>
           <b>Hot Picks</b>
         </h2>
