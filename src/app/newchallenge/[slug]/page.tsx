@@ -1,6 +1,7 @@
 'use client';
 import { ThemeSwitch } from '@/components/theme-switch';
 import { global_games } from '@/config/popcoin-data';
+import { Link } from '@nextui-org/link';
 import {
   Avatar,
   Button,
@@ -54,7 +55,8 @@ export default function ConferenceId({ params }: { params: { slug: number } }) {
         color="default"
         radius="full"
         className="mt-10 bg-black px-28 font-bold text-white dark:bg-gray-900"
-        onPress={onOpen}
+        as={Link}
+        href="https://t.me/ThePopcoinBot?game=shoot_hoops"
       >
         Play Solo
       </Button>
