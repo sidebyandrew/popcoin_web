@@ -1,5 +1,7 @@
 import { Link } from '@nextui-org/link';
 import { Avatar, Button } from '@nextui-org/react';
+import { useBackButton, useMiniApp } from '@tma.js/sdk-react';
+import { useEffect } from 'react';
 
 interface Game {
   id: number;
@@ -14,6 +16,15 @@ interface GameListProps {
 }
 
 const GameList: React.FC<GameListProps> = ({ games }) => {
+  const miniApp = useMiniApp();
+  const backButton = useBackButton();
+
+  useEffect(() => {
+    miniApp.ready();
+    backButton.show();
+    return backButton.on('click', () => miniApp.close());
+  }, []);
+
   return (
     <>
       {games.map((game) => (

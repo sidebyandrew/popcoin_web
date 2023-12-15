@@ -4,6 +4,9 @@ import MobileTab from '@/components/mobile-tab';
 import Tab1Content from '@/components/tab/Tab1Content';
 import Tab2Content from '@/components/tab/Tab2Content';
 import Tab3Content from '@/components/tab/Tab3Content';
+
+import { SDKProvider, type InitOptions } from '@tma.js/sdk-react';
+
 import { useState } from 'react';
 
 const App: React.FC = () => {
@@ -12,20 +15,26 @@ const App: React.FC = () => {
   const handleTabChange = (tab: string) => {
     setActiveTab(tab);
   };
+  const options: InitOptions = {
+    acceptCustomStyles: true,
+    cssVars: true,
+  };
 
   return (
-    <div>
-      {/* Your main content goes here */}
-      <div className="p-4">
-        {/* Render different content based on the activeTab state */}
-        {activeTab === 'tab1' && <Tab1Content />}
-        {activeTab === 'tab2' && <Tab2Content />}
-        {activeTab === 'tab3' && <Tab3Content />}
-      </div>
+    <SDKProvider options={options}>
+      <div>
+        {/* Your main content goes here */}
+        <div className="p-4">
+          {/* Render different content based on the activeTab state */}
+          {activeTab === 'tab1' && <Tab1Content />}
+          {activeTab === 'tab2' && <Tab2Content />}
+          {activeTab === 'tab3' && <Tab3Content />}
+        </div>
 
-      {/* Render the MobileTab component */}
-      <MobileTab onTabChange={handleTabChange} />
-    </div>
+        {/* Render the MobileTab component */}
+        <MobileTab onTabChange={handleTabChange} />
+      </div>
+    </SDKProvider>
   );
 };
 
