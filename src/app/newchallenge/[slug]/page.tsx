@@ -51,11 +51,11 @@ export default function ConferenceId({ params }: { params: { slug: number } }) {
       <Avatar radius="sm" size={'lg'} src={game.imageUrl} />
       <div className="mt-2 text-2xl font-bold">{game.name}</div>
       <Button
+        as={Link}
         size="lg"
         color="default"
         radius="full"
         className="mt-10 bg-black px-28 font-bold text-white dark:bg-gray-900"
-        as={Link}
         href="https://t.me/ThePopcoinBot?game=shoot_hoops"
       >
         Play Solo
