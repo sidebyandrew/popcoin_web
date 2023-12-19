@@ -17,7 +17,7 @@ const App: React.FC = () => {
 
   const backButton = useBackButton();
   useEffect(() => {
-    backButton.show();
+    backButton.hide();
   }, []);
 
   return (
