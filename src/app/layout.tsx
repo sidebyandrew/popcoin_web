@@ -30,22 +30,15 @@ export default function RootLayout({
 }) {
   const headersForContext: ContextProps['headers'] = {};
   headers().forEach((value, key) => (headersForContext[key] = value));
+
   return (
     <html lang="en" className="dark" suppressHydrationWarning>
-      <head>
-        <script src="//cdn.jsdelivr.net/npm/eruda"></script>
-        <script>eruda.init();</script>
-      </head>
       <body
         className={clsx(
           'min-h-screen bg-background font-sans antialiased',
           fontSans.variable
         )}
       >
-        {/*// todo // todo // todo // todo*/}
-        {/*// todo // todo // todo // todo*/}
-        {/*// todo // todo // todo // todo*/}
-        {/*// todo // todo // todo // todo*/}
         {/*<TMAProvider headers={headersForContext}>*/}
         <Providers themeProps={{ attribute: 'class', defaultTheme: 'dark' }}>
           <div className="relative flex h-screen flex-col">
