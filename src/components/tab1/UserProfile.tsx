@@ -1,27 +1,23 @@
 import { ThemeSwitch } from '@/components/theme-switch';
 import { Avatar, Image } from '@nextui-org/react';
-import { useInitData, useMiniApp } from '@tma.js/sdk-react';
 
 const UserProfile = () => {
   // todo
   // todo
   // todo
   // todo
-  const initData = useInitData();
-  let miniApp = useMiniApp();
+  // const initData = useInitData();
+  const initData = { user: { firstName: 'Andy', lastName: 'Block' } };
+  // let miniApp = useMiniApp();
 
   function clickAvatar(): void {
-    console.info('clickAvatar22233333');
-    let botInline = miniApp.isBotInline;
-    console.info(' miniApp.isBotInline', botInline);
-    miniApp.sendData(
-      '{message_id:1702967490,date:1702967490,"text": "send data from web app"}'
-    );
-    console.info('plan to close ');
-    // miniApp.close();
+    //   console.info('clickAvatar22233333');
+    //   let botInline = miniApp.isBotInline;
+    //   console.info(' miniApp.isBotInline', botInline);
+    //   console.info('plan to close ');
+    //   // miniApp.close();
   }
 
-  // const initData = { user: { firstName: 'Andy', lastName: 'Block' } };
   return (
     <>
       <div className="flex justify-between">
