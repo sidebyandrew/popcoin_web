@@ -16,9 +16,8 @@ const UserProfile = () => {
 
         <div className="flex flex-col">
           <div className="text-lg font-bold">
-            {initData?.user?.firstName}
+            {initData?.user?.firstName}&nbsp;
             {initData?.user?.lastName}
-            {JSON.stringify(initData?.user)}
             {initData?.user == null && 'Andrew Ton'}
           </div>
           <div className="flex text-sm text-gray-500">
