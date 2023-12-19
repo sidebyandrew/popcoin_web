@@ -11,6 +11,7 @@ const UserProfile = () => {
   let miniApp = useMiniApp();
 
   function clickAvatar(): void {
+    console.info('clickAvatar');
     miniApp.sendData('hello boting');
   }
 
