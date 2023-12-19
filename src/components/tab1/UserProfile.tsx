@@ -11,13 +11,13 @@ const UserProfile = () => {
   let miniApp = useMiniApp();
 
   function clickAvatar(): void {
-    miniApp.ready();
-    console.info('clickAvatar222');
-    console.info(' miniApp.isBotInline' + miniApp.isBotInline);
-    miniApp.sendData('hello boting');
-    let phoneRequestedStatusPromise = miniApp.requestPhoneAccess();
-    let writeAccessRequestedStatusPromise = miniApp.requestWriteAccess();
-
+    console.info('clickAvatar22233333');
+    let botInline = miniApp.isBotInline;
+    console.info(' miniApp.isBotInline', botInline);
+    miniApp.sendData(
+      'abcdeeeeeeeeeee dfdf dsfdsfdsv dfdf  └ chunks/webpack-bf2db15b781e3f50.js   1.83 kB\n'
+    );
+    console.info('plan to close ');
     miniApp.close();
   }
 
