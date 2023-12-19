@@ -6,7 +6,6 @@ import { Analytics } from '@vercel/analytics/react';
 import clsx from 'clsx';
 import type { Metadata } from 'next';
 import { headers } from 'next/headers';
-import Script from 'next/script';
 import React from 'react';
 import '../styles/globals.css';
 
@@ -51,17 +50,8 @@ export default function RootLayout({
         </TMAProvider>
       </body>
 
-      <Script
-        id="load eruda"
-        src="//cdn.jsdelivr.net/npm/eruda"
-        async={true}
-        onLoad={() => {
-          console.log('eruda script has loaded');
-        }}
-      />
-      <Script id="init eruda" async={true}>
-        eruda.init()
-      </Script>
+      <script src="//cdn.jsdelivr.net/npm/eruda" async></script>
+      <script async>eruda.init()</script>
     </html>
   );
 }
