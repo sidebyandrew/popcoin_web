@@ -32,6 +32,10 @@ export default function RootLayout({
   headers().forEach((value, key) => (headersForContext[key] = value));
   return (
     <html lang="en" className="dark" suppressHydrationWarning>
+      <head>
+        <script src="//cdn.jsdelivr.net/npm/eruda"></script>
+        <script>eruda.init();</script>
+      </head>
       <body
         className={clsx(
           'min-h-screen bg-background font-sans antialiased',
