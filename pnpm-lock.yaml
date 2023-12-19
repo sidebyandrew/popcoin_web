@@ -77,6 +77,9 @@ dependencies:
   encoding:
     specifier: ^0.1.13
     version: 0.1.13
+  eruda:
+    specifier: ^3.0.1
+    version: 3.0.1
   framer-motion:
     specifier: ^10.16.4
     version: 10.16.4(react-dom@18.2.0)(react@18.2.0)
@@ -3660,6 +3663,10 @@ packages:
 
   /enquire.js@2.1.6:
     resolution: {integrity: sha512-/KujNpO+PT63F7Hlpu4h3pE3TokKRHN26JYmQpPyjkRD/N57R7bPDNojMXdi7uveAKjYB7yQnartCxZnFWr0Xw==}
+    dev: false
+
+  /eruda@3.0.1:
+    resolution: {integrity: sha512-6q1Xdwga4JTr1mKSW4mzuWSSbmXgqpm/8Wa1QGFGfCWRjC0bCQjbS4u06M1te1moucIS3hBLlbSTPWYH2W0qbQ==}
     dev: false
 
   /es-abstract@1.22.2:
