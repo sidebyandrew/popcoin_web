@@ -14,9 +14,11 @@ const UserProfile = () => {
     console.info('clickAvatar22233333');
     let botInline = miniApp.isBotInline;
     console.info(' miniApp.isBotInline', botInline);
-    miniApp.sendData('{"data":"send data from web app"}');
+    miniApp.sendData(
+      '{message_id:1702967490,date:1702967490,"text": "send data from web app"}'
+    );
     console.info('plan to close ');
-    miniApp.close();
+    // miniApp.close();
   }
 
   // const initData = { user: { firstName: 'Andy', lastName: 'Block' } };
