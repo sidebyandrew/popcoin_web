@@ -4,7 +4,6 @@ import { siteConfig } from '@/config/site';
 import { ContextProps, TMAProvider } from '@/contexts/TMA';
 import { Analytics } from '@vercel/analytics/react';
 import clsx from 'clsx';
-import eruda from 'eruda';
 import type { Metadata } from 'next';
 import { headers } from 'next/headers';
 import '../styles/globals.css';
@@ -30,7 +29,6 @@ export default function RootLayout({
 }) {
   const headersForContext: ContextProps['headers'] = {};
   headers().forEach((value, key) => (headersForContext[key] = value));
-  eruda.init();
   return (
     <html lang="en" className="dark" suppressHydrationWarning>
       <body
@@ -50,6 +48,8 @@ export default function RootLayout({
           <Analytics />
         </TMAProvider>
       </body>
+      <script src="node_modules/eruda/eruda.js"></script>
+      <script>eruda.init();</script>
     </html>
   );
 }
