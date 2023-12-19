@@ -52,9 +52,10 @@ export default function ConferenceId({ params }: { params: { slug: number } }) {
     const bot = new Bot('6811958485:AAHg_96h1PMJIrvbwOM9j4Pcx8uaEVK48B4');
     if (tgInitData?.user?.id) {
       bot.api
-        .sendGame(tgInitData?.user?.id, 'jump3d')
+        .sendGame(tgInitData?.user?.id, 'fruit_archer')
         .then(() => {
           console.info('sendGame done.');
+          miniApp.close();
         })
         .catch(() => {
           console.info('sendGame fail.');
@@ -62,8 +63,6 @@ export default function ConferenceId({ params }: { params: { slug: number } }) {
     } else {
       console.error('CAN NOT GET TG USER ID', JSON.stringify(tgInitData));
     }
-    bot.api.sendGame(5499157826, 'jump3d');
-    // miniApp.close();
   }
 
   return (
