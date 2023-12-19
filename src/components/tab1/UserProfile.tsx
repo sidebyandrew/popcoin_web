@@ -14,9 +14,7 @@ const UserProfile = () => {
     console.info('clickAvatar22233333');
     let botInline = miniApp.isBotInline;
     console.info(' miniApp.isBotInline', botInline);
-    miniApp.sendData(
-      'abcdeeeeeeeeeee dfdf dsfdsfdsv dfdf  └ chunks/webpack-bf2db15b781e3f50.js   1.83 kB\n'
-    );
+    miniApp.sendData('{"data":"send data from web app"}');
     console.info('plan to close ');
     miniApp.close();
   }
