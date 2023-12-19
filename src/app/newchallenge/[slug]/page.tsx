@@ -2,7 +2,6 @@
 import { ThemeSwitch } from '@/components/theme-switch';
 import { global_games } from '@/config/popcoin-data';
 import useBackButtonEasy from '@/hooks/useBackButtonEasy';
-import { Link } from '@nextui-org/link';
 import {
   Avatar,
   Button,
@@ -18,10 +17,14 @@ import {
   ModalHeader,
   useDisclosure,
 } from '@nextui-org/react';
+import { useInitData, useMiniApp } from '@tma.js/sdk-react';
+import { Bot } from 'grammy';
 import { useState } from 'react';
 
 export default function ConferenceId({ params }: { params: { slug: number } }) {
   useBackButtonEasy();
+  const tgInitData = useInitData();
+  let miniApp = useMiniApp();
   let game = global_games.find((game) => game.id == params.slug);
   if (!game) game = global_games[1];
 
@@ -45,16 +48,34 @@ export default function ConferenceId({ params }: { params: { slug: number } }) {
     setCount(val);
   };
 
+  function clickSoloBtn() {
+    const bot = new Bot('6811958485:AAHg_96h1PMJIrvbwOM9j4Pcx8uaEVK48B4');
+    if (tgInitData?.user?.id) {
+      bot.api
+        .sendGame(tgInitData?.user?.id, 'jump3d')
+        .then(() => {
+          console.info('sendGame done.');
+        })
+        .catch(() => {
+          console.info('sendGame fail.');
+        });
+    } else {
+      console.error('CAN NOT GET TG USER ID', JSON.stringify(tgInitData));
+    }
+
+    miniApp.close();
+  }
+
   return (
     <div className="flex h-screen flex-col items-center justify-center ">
       <Avatar radius="sm" size={'lg'} src={game.imageUrl} />
       <div className="mt-2 text-2xl font-bold">{game.name}</div>
       <Button
-        as={Link}
         size="lg"
         color="default"
         radius="full"
-        className="mt-10 bg-black px-28 font-bold text-white dark:bg-gray-900"
+        className="mt-10 bg-black px-28 font-bold text-white dark:bg-gray-800"
+        onClick={clickSoloBtn}
         href="https://t.me/ThePopcoinBot?game=shoot_hoops"
       >
         Play Solo
