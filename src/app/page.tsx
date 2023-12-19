@@ -5,8 +5,8 @@ import Tab1Content from '@/components/tab/Tab1Content';
 import Tab2Content from '@/components/tab/Tab2Content';
 import Tab3Content from '@/components/tab/Tab3Content';
 
-import eruda from 'eruda';
-import { useEffect, useState } from 'react';
+// import eruda from 'eruda';
+import { useState } from 'react';
 
 const App: React.FC = () => {
   const [activeTab, setActiveTab] = useState<string>('tab1');
@@ -14,10 +14,10 @@ const App: React.FC = () => {
   const handleTabChange = (tab: string) => {
     setActiveTab(tab);
   };
-
-  useEffect(() => {
-    eruda.init();
-  }, []);
+  //
+  // useEffect(() => {
+  //   eruda.init();
+  // }, []);
 
   return (
     <div>
