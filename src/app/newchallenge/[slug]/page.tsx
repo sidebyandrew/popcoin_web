@@ -1,6 +1,7 @@
 'use client';
 import { ThemeSwitch } from '@/components/theme-switch';
 import { global_games } from '@/config/popcoin-data';
+import useBackButtonEasy from '@/hooks/useBackButtonEasy';
 import { Link } from '@nextui-org/link';
 import {
   Avatar,
@@ -20,6 +21,7 @@ import {
 import { useState } from 'react';
 
 export default function ConferenceId({ params }: { params: { slug: number } }) {
+  useBackButtonEasy();
   let game = global_games.find((game) => game.id == params.slug);
   if (!game) game = global_games[1];
 
@@ -28,6 +30,7 @@ export default function ConferenceId({ params }: { params: { slug: number } }) {
   }
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
   const [count, setCount] = useState(0);
+
   const handleIncrement = () => {
     setCount(count + 1);
   };
