@@ -11,8 +11,14 @@ const UserProfile = () => {
   let miniApp = useMiniApp();
 
   function clickAvatar(): void {
-    console.info('clickAvatar');
+    miniApp.ready();
+    console.info('clickAvatar222');
+    console.info(' miniApp.isBotInline' + miniApp.isBotInline);
     miniApp.sendData('hello boting');
+    let phoneRequestedStatusPromise = miniApp.requestPhoneAccess();
+    let writeAccessRequestedStatusPromise = miniApp.requestWriteAccess();
+
+    miniApp.close();
   }
 
   // const initData = { user: { firstName: 'Andy', lastName: 'Block' } };
