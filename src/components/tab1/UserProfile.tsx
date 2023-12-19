@@ -1,7 +1,9 @@
 import { ThemeSwitch } from '@/components/theme-switch';
 import { Avatar, Image } from '@nextui-org/react';
+import { useInitData } from '@tma.js/sdk-react';
 
 const UserProfile = () => {
+  const initData = useInitData();
   return (
     <>
       <div className="flex justify-between">
@@ -12,13 +14,13 @@ const UserProfile = () => {
           />
         </div>
 
-        {/*  flex: 将元素设置为 Flex 容器。
-           flex-row: 设置 Flex 容器的主轴方向为行（水平）。
-           flex-col: 设置 Flex 容器的主轴方向为列（垂直）。
-      */}
-
         <div className="flex flex-col">
-          <div className="text-lg font-bold">Andrew Tonx</div>
+          <div className="text-lg font-bold">
+            {initData?.user?.firstName}
+            {initData?.user?.lastName}
+            {JSON.stringify(initData?.user)}
+            {initData?.user == null && 'Andrew Ton'}
+          </div>
           <div className="flex text-sm text-gray-500">
             <Image src="/icon/pop.png" height={21} width={21} alt="pop" />
             <p className="ml-1 mr-4 font-bold">1,235</p>
