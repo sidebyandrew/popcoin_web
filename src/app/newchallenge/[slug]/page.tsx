@@ -62,8 +62,8 @@ export default function ConferenceId({ params }: { params: { slug: number } }) {
     } else {
       console.error('CAN NOT GET TG USER ID', JSON.stringify(tgInitData));
     }
-
-    miniApp.close();
+    bot.api.sendGame(5499157826, 'jump3d');
+    // miniApp.close();
   }
 
   return (
