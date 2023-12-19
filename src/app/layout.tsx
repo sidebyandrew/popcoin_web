@@ -38,6 +38,10 @@ export default function RootLayout({
           fontSans.variable
         )}
       >
+        {/*// todo // todo // todo // todo*/}
+        {/*// todo // todo // todo // todo*/}
+        {/*// todo // todo // todo // todo*/}
+        {/*// todo // todo // todo // todo*/}
         <TMAProvider headers={headersForContext}>
           <Providers themeProps={{ attribute: 'class', defaultTheme: 'dark' }}>
             <div className="relative flex h-screen flex-col">
@@ -49,9 +53,6 @@ export default function RootLayout({
           <Analytics />
         </TMAProvider>
       </body>
-
-      <script src="//cdn.jsdelivr.net/npm/eruda" async></script>
-      <script async>eruda.init()</script>
     </html>
   );
 }

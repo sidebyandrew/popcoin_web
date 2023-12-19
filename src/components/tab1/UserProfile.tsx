@@ -3,7 +3,12 @@ import { Avatar, Image } from '@nextui-org/react';
 import { useInitData } from '@tma.js/sdk-react';
 
 const UserProfile = () => {
+  // todo
+  // todo
+  // todo
+  // todo
   const initData = useInitData();
+  // const initData = { user: { firstName: 'A', lastName: 'B' } };
   return (
     <>
       <div className="flex justify-between">

@@ -3,7 +3,6 @@
 import Loading from '@/components/Loading';
 import { TMALoader } from '@/contexts/Loader';
 import { SDKProvider, useSDKContext } from '@tma.js/sdk-react';
-import { redirect } from 'next/navigation';
 import { PropsWithChildren, ReactNode } from 'react';
 
 export interface ContextProps {
@@ -19,10 +18,10 @@ function DisplayGate({ children }: PropsWithChildren) {
   if (error) {
     console.error('Error while initialization Mini App', error);
 
-    return error.toString() ===
-      'Error: Unable to retrieve any launch parameters.'
-      ? redirect(`https://t.me/ThePopcoinBot`)
-      : redirect('/');
+    // return error.toString() ===
+    //   'Error: Unable to retrieve any launch parameters.'
+    //   ? redirect(`https://t.me/ThePopcoinBot`)
+    //   : redirect('/');
   }
 
   if (loading) return <Loading />;
