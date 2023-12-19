@@ -48,8 +48,8 @@ export default function RootLayout({
           <Analytics />
         </TMAProvider>
       </body>
-      <script src="node_modules/eruda/eruda.js"></script>
-      <script>eruda.init();</script>
+      <script src="node_modules/eruda/eruda.js" async></script>
+      <script async>eruda.init();</script>
     </html>
   );
 }
