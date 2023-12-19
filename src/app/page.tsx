@@ -5,7 +5,7 @@ import Tab1Content from '@/components/tab/Tab1Content';
 import Tab2Content from '@/components/tab/Tab2Content';
 import Tab3Content from '@/components/tab/Tab3Content';
 
-import { useBackButton, useInitData, useSDKContext } from '@tma.js/sdk-react';
+import { useBackButton } from '@tma.js/sdk-react';
 import { useEffect, useState } from 'react';
 
 const App: React.FC = () => {
@@ -16,8 +16,6 @@ const App: React.FC = () => {
   };
 
   const backButton = useBackButton();
-  const initData = useInitData();
-  const { initResult } = useSDKContext();
 
   useEffect(() => {
     backButton.hide();
@@ -27,8 +25,6 @@ const App: React.FC = () => {
     <div>
       {/* Your main content goes here */}
       <div className="p-4">
-        {initData?.user?.firstName}
-        {initData?.user?.lastName}
         {/* Render different content based on the activeTab state */}
         {activeTab === 'tab1' && <Tab1Content />}
         {activeTab === 'tab2' && <Tab2Content />}
