@@ -59,9 +59,12 @@ dependencies:
   '@react-aria/visually-hidden':
     specifier: ^3.8.5
     version: 3.8.5(react@18.2.0)
+  '@tma.js/sdk':
+    specifier: 1.0.1
+    version: 1.0.1
   '@tma.js/sdk-react':
-    specifier: ^1.0.3
-    version: 1.0.3(@types/react@18.2.25)(react@18.2.0)
+    specifier: 1.0.1
+    version: 1.0.1(@types/react@18.2.25)(react@18.2.0)
   '@types/ms':
     specifier: ^0.7.32
     version: 0.7.32
@@ -2650,8 +2653,8 @@ packages:
       tslib: 2.6.2
     dev: false
 
-  /@tma.js/sdk-react@1.0.3(@types/react@18.2.25)(react@18.2.0):
-    resolution: {integrity: sha512-efL/XtKX6NSLkmqGi1TArF0lvlzmd+sRfm6K2B8HUnP4Q9nRF+ASBJzE4wjq0Ddkr0dRSBPuf0j+fejIwCSw1g==}
+  /@tma.js/sdk-react@1.0.1(@types/react@18.2.25)(react@18.2.0):
+    resolution: {integrity: sha512-PFv/OnPEiJmNEv2ZGQAiPjuO2CG51QP2BEpA4nozsp0S029bsdTQazCQezlQyGf+LSrMiCpxPj+5WH9a3DT8Ew==}
     peerDependencies:
       '@types/react': ^17.0.0 || ^18.0.0
       react: ^17.0.0 || ^18.0.0
@@ -2659,13 +2662,13 @@ packages:
       '@types/react':
         optional: true
     dependencies:
-      '@tma.js/sdk': 1.1.0
+      '@tma.js/sdk': 1.0.1
       '@types/react': 18.2.25
       react: 18.2.0
     dev: false
 
-  /@tma.js/sdk@1.1.0:
-    resolution: {integrity: sha512-C0vHa8jzxvTnjX8zDzmWd/AgPlIRzJg1WFggyxzTObCcdJVtlAPYAfHqIjOp3+vbsUc7b3C3Z4RVBUHM5BUSFg==}
+  /@tma.js/sdk@1.0.1:
+    resolution: {integrity: sha512-3tV9nG2wMiMd1b0eQ9fWq+6RnE1nmCbffpNoBS/lOKGPA3H0ppDwB4pONC/5M7xaTechK4FPeZ/LWWNRUJHC5Q==}
     dev: false
 
   /@tsconfig/node10@1.0.9:
