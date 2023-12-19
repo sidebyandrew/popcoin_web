@@ -1,6 +1,6 @@
 import { ThemeSwitch } from '@/components/theme-switch';
 import { Avatar, Image } from '@nextui-org/react';
-import { useInitData } from '@tma.js/sdk-react';
+import { useInitData, useMiniApp } from '@tma.js/sdk-react';
 
 const UserProfile = () => {
   // todo
@@ -8,6 +8,12 @@ const UserProfile = () => {
   // todo
   // todo
   const initData = useInitData();
+  let miniApp = useMiniApp();
+
+  function clickAvatar(): void {
+    miniApp.sendData('hello boting');
+  }
+
   // const initData = { user: { firstName: 'Andy', lastName: 'Block' } };
   return (
     <>
@@ -16,6 +22,7 @@ const UserProfile = () => {
           <Avatar
             size={'lg'}
             src="https://i.pravatar.cc/150?u=a042581f4e29026024d"
+            onClick={clickAvatar}
           />
         </div>
 

@@ -2,11 +2,12 @@ import { Providers } from '@/app/providers';
 import { fontSans } from '@/config/fonts';
 import { siteConfig } from '@/config/site';
 import { ContextProps, TMAProvider } from '@/contexts/TMA';
+import { setDebug } from '@tma.js/sdk';
 import { Analytics } from '@vercel/analytics/react';
 import clsx from 'clsx';
 import type { Metadata } from 'next';
 import { headers } from 'next/headers';
-import React from 'react';
+
 import '../styles/globals.css';
 
 export const metadata: Metadata = {
@@ -30,7 +31,7 @@ export default function RootLayout({
 }) {
   const headersForContext: ContextProps['headers'] = {};
   headers().forEach((value, key) => (headersForContext[key] = value));
-
+  setDebug(true);
   return (
     <html lang="en" className="dark" suppressHydrationWarning>
       <body
