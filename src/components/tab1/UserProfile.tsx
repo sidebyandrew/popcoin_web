@@ -1,13 +1,14 @@
 import { ThemeSwitch } from '@/components/theme-switch';
 import { Avatar, Image } from '@nextui-org/react';
+import { useInitData } from '@tma.js/sdk-react';
 
 const UserProfile = () => {
   // todo
   // todo
   // todo
   // todo
-  // const initData = useInitData();
-  const initData = { user: { firstName: 'Andy', lastName: 'Block' } };
+  const initData = useInitData();
+  // const initData = { user: { firstName: 'Andy', lastName: 'Block' } };
   // let miniApp = useMiniApp();
 
   function clickAvatar(): void {
