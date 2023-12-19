@@ -43,10 +43,6 @@ export default function ConferenceId({ params }: { params: { slug: number } }) {
   };
 
   return (
-    // flex 默认是 x 轴为主轴
-    // -  flex-col 类将 Flex 容器的主轴方向设置为列（垂直） , 即元素按照 y 轴排序
-    //   -- justify-center 主轴居中  [计] 段落重排, 两端对齐  ===> 在一条轴内，公正就是两端对齐
-    //   -- items-center 是所有items的设置，将所有 items 居中对齐
     <div className="flex h-screen flex-col items-center justify-center ">
       <Avatar radius="sm" size={'lg'} src={game.imageUrl} />
       <div className="mt-2 text-2xl font-bold">{game.name}</div>
