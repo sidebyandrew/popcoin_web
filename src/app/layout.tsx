@@ -1,7 +1,7 @@
 import { Providers } from '@/app/providers';
 import { fontSans } from '@/config/fonts';
 import { siteConfig } from '@/config/site';
-import { ContextProps, TMAProvider } from '@/contexts/TMA';
+import { ContextProps } from '@/contexts/TMA';
 import { Analytics } from '@vercel/analytics/react';
 import clsx from 'clsx';
 import type { Metadata } from 'next';
@@ -42,16 +42,16 @@ export default function RootLayout({
         {/*// todo // todo // todo // todo*/}
         {/*// todo // todo // todo // todo*/}
         {/*// todo // todo // todo // todo*/}
-        <TMAProvider headers={headersForContext}>
-          <Providers themeProps={{ attribute: 'class', defaultTheme: 'dark' }}>
-            <div className="relative flex h-screen flex-col">
-              <main className="container mx-auto max-w-7xl flex-grow ">
-                {children}
-              </main>
-            </div>
-          </Providers>
-          <Analytics />
-        </TMAProvider>
+        {/*<TMAProvider headers={headersForContext}>*/}
+        <Providers themeProps={{ attribute: 'class', defaultTheme: 'dark' }}>
+          <div className="relative flex h-screen flex-col">
+            <main className="container mx-auto max-w-7xl flex-grow ">
+              {children}
+            </main>
+          </div>
+        </Providers>
+        <Analytics />
+        {/*</TMAProvider>*/}
       </body>
     </html>
   );
