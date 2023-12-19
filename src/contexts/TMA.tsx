@@ -21,7 +21,7 @@ function DisplayGate({ children }: PropsWithChildren) {
 
     return error.toString() ===
       'Error: Unable to retrieve any launch parameters.'
-      ? redirect(`https://landing.unogame.site`)
+      ? redirect(`https://t.me/ThePopcoinBot`)
       : redirect('/');
   }
 
