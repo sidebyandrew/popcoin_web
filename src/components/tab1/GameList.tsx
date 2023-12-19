@@ -1,5 +1,5 @@
-import { Link } from '@nextui-org/link';
 import { Avatar, Button } from '@nextui-org/react';
+import { useRouter } from 'next/navigation';
 
 interface Game {
   id: number;
@@ -14,6 +14,7 @@ interface GameListProps {
 }
 
 const GameList: React.FC<GameListProps> = ({ games }) => {
+  const router = useRouter();
   return (
     <>
       {games.map((game) => (
@@ -31,8 +32,9 @@ const GameList: React.FC<GameListProps> = ({ games }) => {
               size="sm"
               color="warning"
               className="bg-orange-700 font-bold text-white"
-              as={Link}
-              href={'/newchallenge/' + game.id}
+              onClick={() => {
+                router.push('/newchallenge/' + game.id);
+              }}
             >
               Play
             </Button>
