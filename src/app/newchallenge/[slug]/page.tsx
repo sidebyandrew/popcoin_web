@@ -60,7 +60,7 @@ export default function ConferenceId({ params }: { params: { slug: number } }) {
   function clickSoloBtn(shortName: string | undefined) {
     const tempSafeGameSet: Set<string> = new Set([
       'jump_3d',
-      'fruit_archer',
+      'fruit_archer_challenge',
       'shoot_hoops',
     ]);
 

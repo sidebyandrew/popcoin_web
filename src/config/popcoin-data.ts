@@ -12,7 +12,7 @@ export const global_games = [
   {
     id: 2,
     name: 'Fruit Archer',
-    shortName: 'fruit_archer',
+    shortName: 'fruit_archer_challenge',
     introduction: 'Hit any much fruit with arrows as you can.',
     gameUrl:
       'https://h5game-1256660609.cos.ap-guangzhou.myqcloud.com/archer/h5/index.html',
