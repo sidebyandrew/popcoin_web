@@ -32,7 +32,12 @@ const UserProfile = () => {
             {initData?.user?.lastName}
             {initData?.user == null && 'Andrew Ton'}
           </div>
-          <div className="flex text-sm text-gray-500">
+          <div
+            className="flex text-sm text-gray-500"
+            onClick={() => {
+              router.push('/tonwallet');
+            }}
+          >
             <Image src="/icon/pop.png" height={21} width={21} alt="pop" />
             <p className="ml-1 mr-4 font-bold">1,235</p>
             <Image
@@ -42,15 +47,7 @@ const UserProfile = () => {
               alt="ton"
             />
             <p className=" mx-1 font-bold">1,000</p>
-            <Image
-              src="/icon/add@3x.png"
-              height={18}
-              width={18}
-              alt="add"
-              onClick={() => {
-                router.push('/tonwallet');
-              }}
-            />
+            <Image src="/icon/add@3x.png" height={21} width={21} alt="add" />
           </div>
         </div>
         <div className="flex-item ml-auto">
