@@ -3,20 +3,14 @@ import { Avatar, Image } from '@nextui-org/react';
 import { useInitData } from '@tma.js/sdk-react';
 
 const UserProfile = () => {
-  // todo
-  // todo
-  // todo
-  // todo
+  {
+    /* todo remove tma */
+  } // ==============================================================
   const initData = useInitData();
   // const initData = { user: { firstName: 'Andy', lastName: 'Block' } };
-  // let miniApp = useMiniApp();
-
+  // ==============================================================
   function clickAvatar(): void {
-    //   console.info('clickAvatar22233333');
-    //   let botInline = miniApp.isBotInline;
-    //   console.info(' miniApp.isBotInline', botInline);
-    //   console.info('plan to close ');
-    //   // miniApp.close();
+    console.info('clickAvatar');
   }
 
   return (

@@ -8,12 +8,12 @@ export default function GameListTab() {
       <Tabs variant={'underlined'} aria-label="Options">
         <Tab key="challenges" title="Challenges">
           <div>
-            <GameList games={global_games} />
+            <GameList type={'CHALLENGES'} games={global_games} />
           </div>
         </Tab>
         <Tab key="battles" title="PvP Battles">
           <div>
-            <GameList games={global_challenges} />
+            <GameList type={'BATTLES'} games={global_challenges} />
           </div>
         </Tab>
       </Tabs>

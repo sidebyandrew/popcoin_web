@@ -1,6 +1,7 @@
 'use client';
 import { ThemeSwitch } from '@/components/theme-switch';
-import { global_games } from '@/config/popcoin-data';
+import { global_challenges } from '@/config/popcoin-data';
+
 import useBackButtonEasy from '@/hooks/useBackButtonEasy';
 import {
   Avatar,
@@ -10,6 +11,7 @@ import {
   CardHeader,
   Divider,
   Image,
+  Link,
   Modal,
   ModalBody,
   ModalContent,
@@ -35,8 +37,8 @@ export default function ConferenceId({ params }: { params: { slug: number } }) {
   // let miniApp = { close: () => {} };
   // ==============================================================
 
-  let game = global_games.find((game) => game.id == params.slug);
-  if (!game) game = global_games[1];
+  let game = global_challenges.find((game) => game.id == params.slug);
+  if (!game) game = global_challenges[1];
 
   function handleHome() {
     window.location.href = '/';
@@ -83,20 +85,21 @@ export default function ConferenceId({ params }: { params: { slug: number } }) {
         size="lg"
         color="default"
         radius="full"
-        className="mt-10 bg-black px-28 font-bold text-white dark:bg-gray-800"
+        className="mt-10 bg-black px-20 font-bold text-white dark:bg-gray-800"
         onClick={clickSoloBtn}
-        href="https://t.me/ThePopcoinBot?game=shoot_hoops"
       >
-        Play Solo
+        &nbsp;Start Matching&nbsp;
       </Button>
       <Button
         size="lg"
         radius="full"
         color="warning"
         className="mt-4 bg-orange-700  px-20 font-bold text-white"
-        onPress={onOpen}
+        // onPress={onOpen}
+        as={Link}
+        href="https://t.me/ThePopcoinBot?game=shoot_hoops"
       >
-        Create Challenge
+        Play with Friends
       </Button>
 
       <Modal isOpen={isOpen} onOpenChange={onOpenChange}>

@@ -10,10 +10,11 @@ interface Game {
 }
 
 interface GameListProps {
+  type: 'CHALLENGES' | 'BATTLES';
   games: Game[];
 }
 
-const GameList: React.FC<GameListProps> = ({ games }) => {
+const GameList: React.FC<GameListProps> = ({ type, games }) => {
   const router = useRouter();
   return (
     <>
@@ -33,7 +34,11 @@ const GameList: React.FC<GameListProps> = ({ games }) => {
               color="warning"
               className="bg-orange-700 font-bold text-white"
               onClick={() => {
-                router.push('/newchallenge/' + game.id);
+                if ('CHALLENGES' === type) {
+                  router.push('/newchallenge/' + game.id);
+                } else {
+                  router.push('/newbattle/' + game.id);
+                }
               }}
             >
               Play

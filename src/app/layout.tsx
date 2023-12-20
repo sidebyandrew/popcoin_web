@@ -40,6 +40,7 @@ export default function RootLayout({
           fontSans.variable
         )}
       >
+        {/* todo remove tma */}
         <TMAProvider headers={headersForContext}>
           <Providers themeProps={{ attribute: 'class', defaultTheme: 'dark' }}>
             <div className="relative flex h-screen flex-col">
