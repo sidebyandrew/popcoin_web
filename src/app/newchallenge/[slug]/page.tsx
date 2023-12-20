@@ -58,6 +58,16 @@ export default function ConferenceId({ params }: { params: { slug: number } }) {
   };
 
   function clickSoloBtn(shortName: string | undefined) {
+    const tempSafeGameSet: Set<string> = new Set([
+      'jump_3d',
+      'fruit_archer',
+      'shoot_hoops',
+    ]);
+
+    if (!shortName || !tempSafeGameSet.has(shortName)) {
+      shortName = 'shoot_hoops';
+    }
+
     const bot = new Bot('6811958485:AAHg_96h1PMJIrvbwOM9j4Pcx8uaEVK48B4');
     if (tgInitData?.user?.id) {
       bot.api

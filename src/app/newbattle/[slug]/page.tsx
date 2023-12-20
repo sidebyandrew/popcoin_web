@@ -58,10 +58,22 @@ export default function ConferenceId({ params }: { params: { slug: number } }) {
   };
 
   function clickSoloBtn(shortName: string | undefined) {
+    const tempSafeGameSet: Set<string> = new Set([
+      'meta_winner',
+      'jaws',
+      'popstar',
+      'amaze',
+      'chess',
+    ]);
+
+    if (!shortName || !tempSafeGameSet.has(shortName)) {
+      shortName = 'chess';
+    }
+
     const bot = new Bot('6811958485:AAHg_96h1PMJIrvbwOM9j4Pcx8uaEVK48B4');
     if (tgInitData?.user?.id) {
       bot.api
-        .sendGame(tgInitData?.user?.id, shortName || 'jump_3d')
+        .sendGame(tgInitData?.user?.id, shortName || 'meta_winner')
         .then(() => {
           console.info('sendGame done.');
           miniApp.close();
