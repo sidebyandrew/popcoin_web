@@ -29,6 +29,7 @@
     "@react-aria/visually-hidden": "^3.8.5",
     "@tma.js/sdk": "1.0.1",
     "@tma.js/sdk-react": "1.0.1",
+    "@tonconnect/ui-react": "2.0.0-beta.6",
     "@types/ms": "^0.7.32",
     "@vercel/analytics": "^1.1.1",
     "@vercel/postgres": "^0.5.0",
