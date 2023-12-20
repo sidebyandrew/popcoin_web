@@ -32,7 +32,7 @@ const GameList: React.FC<GameListProps> = ({ type, games }) => {
             <Button
               size="sm"
               color="warning"
-              className="bg-orange-700 font-bold text-white"
+              className="bg-[#FC5A05]  font-bold text-white"
               onClick={() => {
                 if ('CHALLENGES' === type) {
                   router.push('/newchallenge/' + game.id);

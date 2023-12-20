@@ -95,7 +95,7 @@ export default function ConferenceId({ params }: { params: { slug: number } }) {
         size="lg"
         radius="full"
         color="warning"
-        className="mt-4 bg-orange-700  px-20 font-bold text-white"
+        className="mt-4 bg-[#FC5A05] px-20 font-bold text-white"
         // onPress={onOpen}
         as={Link}
         href="https://t.me/ThePopcoinBot?game=shoot_hoops"
@@ -136,7 +136,7 @@ export default function ConferenceId({ params }: { params: { slug: number } }) {
                         size="sm"
                         radius="sm"
                         color="warning"
-                        className="ml-5 bg-orange-700  px-2 font-bold text-white"
+                        className="ml-5 bg-[#FC5A05] px-2 font-bold text-white"
                         onPress={onOpen}
                       >
                         Deposit
@@ -194,7 +194,7 @@ export default function ConferenceId({ params }: { params: { slug: number } }) {
                     size="lg"
                     radius="full"
                     color="warning"
-                    className="mt-4 bg-orange-700  px-20 font-bold text-white"
+                    className="mt-4 bg-[#FC5A05] px-20 font-bold text-white"
                     onPress={onClose}
                   >
                     Create Challenge
