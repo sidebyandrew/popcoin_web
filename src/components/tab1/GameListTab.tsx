@@ -1,5 +1,5 @@
 import GameList from '@/components/tab1/GameList';
-import { global_games } from '@/config/popcoin-data';
+import { global_challenges, global_games } from '@/config/popcoin-data';
 import { Tab, Tabs } from '@nextui-org/react';
 
 export default function GameListTab() {
@@ -13,7 +13,7 @@ export default function GameListTab() {
         </Tab>
         <Tab key="battles" title="PvP Battles">
           <div>
-            <GameList games={global_games} />
+            <GameList games={global_challenges} />
           </div>
         </Tab>
       </Tabs>

@@ -170,3 +170,149 @@ export const global_games = [
     imageUrl: '/game/spacetravel.png',
   },
 ];
+
+export const global_challenges = [
+  {
+    id: 1,
+    name: 'Meta Winner',
+    introduction: 'Test your Web3 knowledge in a quiz battle!',
+    gameUrl:
+      'https://h5game-1256660609.cos.ap-guangzhou.myqcloud.com/vs/ton_pvp_web2/index.html',
+    imageUrl: '/game/meta_winner.png',
+  },
+
+  {
+    id: 2,
+    name: 'Amaze',
+    introduction: 'Guide your champion through the maze.',
+    gameUrl:
+      'https://h5game-1256660609.cos.ap-guangzhou.myqcloud.com/vs/amze/web/index.html',
+    imageUrl: '/game/amaze.png',
+  },
+
+  {
+    id: 3,
+    name: 'Chess',
+    introduction: 'Play and win a classic chess game.',
+    gameUrl:
+      'https://h5game-1256660609.cos.ap-guangzhou.myqcloud.com/vs/chess/web/index.html',
+    imageUrl: '/game/chess.png',
+  },
+
+  {
+    id: 4,
+    name: 'Class Battle',
+    introduction: 'See who can throw more paper balls!',
+    gameUrl:
+      'https://h5game-1256660609.cos.ap-guangzhou.myqcloud.com/vs/class/web/index.html',
+    imageUrl: '/game/class_battle.png',
+  },
+
+  {
+    id: 5,
+    name: 'Climb',
+    introduction: 'Be the first to reach the top of the tree.',
+    gameUrl:
+      'https://h5game-1256660609.cos.ap-guangzhou.myqcloud.com/vs/diangan/web/index.html',
+    imageUrl: '/game/climb.png',
+  },
+
+  {
+    id: 6,
+    name: 'Animal Chess',
+    introduction: 'Win beastly battles on the chess board!',
+    gameUrl:
+      'https://h5game-1256660609.cos.ap-guangzhou.myqcloud.com/vs/doushouqi/web/index.html',
+    imageUrl: '/game/animal chess.png',
+  },
+
+  {
+    id: 7,
+    name: 'Matching Cards',
+    introduction: 'Match cards & be the memory master.',
+    gameUrl:
+      'https://h5game-1256660609.cos.ap-guangzhou.myqcloud.com/vs/fanfanle/web/index.html',
+    imageUrl: '/game/matching two.png',
+  },
+
+  {
+    id: 8,
+    name: 'Reversi',
+    introduction: 'Flip the coins to conquer your rival!',
+    gameUrl:
+      'https://h5game-1256660609.cos.ap-guangzhou.myqcloud.com/vs/fanzhuanqi/web/index.html',
+    imageUrl: '/game/reversi.png',
+  },
+
+  {
+    id: 9,
+    name: 'Match Two',
+    introduction: 'Connect tiles of same pictures to win.',
+    gameUrl:
+      'https://h5game-1256660609.cos.ap-guangzhou.myqcloud.com/vs/lianlian/web/index.html',
+    imageUrl: '/game/lianliankan.png',
+  },
+
+  {
+    id: 10,
+    name: 'Coins Battle',
+    introduction: 'Total up the coins & reach the prices.',
+    gameUrl:
+      'https://h5game-1256660609.cos.ap-guangzhou.myqcloud.com/vs/lingqian/web/index.html',
+    imageUrl: '/game/coins.png',
+  },
+
+  {
+    id: 11,
+    name: 'Jaws',
+    introduction: 'Be the last survivor in the shark pond!',
+    gameUrl:
+      'https://h5game-1256660609.cos.ap-guangzhou.myqcloud.com/vs/shks/web/index.html',
+    imageUrl: '/game/jaws.png',
+  },
+
+  {
+    id: 12,
+    name: 'Sky Craft',
+    introduction: 'Strive to be the last ship standing!',
+    gameUrl:
+      'https://h5game-1256660609.cos.ap-guangzhou.myqcloud.com/vs/tainkong/web/index.html',
+    imageUrl: '/game/tiankong.png',
+  },
+
+  {
+    id: 13,
+    name: 'Match Three',
+    introduction: 'Switch and triple match candies.',
+    gameUrl:
+      'https://h5game-1256660609.cos.ap-guangzhou.myqcloud.com/vs/tangguo/h5/index.html',
+    imageUrl: '/game/match_three.png',
+  },
+
+  {
+    id: 14,
+    name: 'Connect Four',
+    introduction: 'Connect 4 tokens in a row to win.',
+    gameUrl:
+      'https://h5game-1256660609.cos.ap-guangzhou.myqcloud.com/vs/xialuoqi/web/index.html',
+    imageUrl: '/game/connect four.jpg',
+  },
+
+  {
+    id: 15,
+    name: 'Popstar',
+    introduction: 'Pop the block clusters to eliminate them!',
+    gameUrl:
+      'https://h5game-1256660609.cos.ap-guangzhou.myqcloud.com/vs/xmxx/web/index.html',
+    imageUrl: '/game/popscore.png',
+  },
+
+  {
+    id: 16,
+    name: 'Brick Crush',
+    introduction: 'Align the bricks to crush them in time.',
+    gameUrl:
+      'https://h5game-1256660609.cos.ap-guangzhou.myqcloud.com/vs/xzk/web/index.html',
+    imageUrl: '/game/brick.png',
+  },
+];
