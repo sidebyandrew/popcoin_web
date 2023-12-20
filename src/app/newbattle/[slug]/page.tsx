@@ -21,6 +21,7 @@ import {
 } from '@nextui-org/react';
 import { useInitData, useMiniApp } from '@tma.js/sdk-react';
 import { Bot } from 'grammy';
+import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 
 export default function ConferenceId({ params }: { params: { slug: number } }) {
@@ -36,12 +37,12 @@ export default function ConferenceId({ params }: { params: { slug: number } }) {
   // const tgInitData = { user: { id: 1 } };
   // let miniApp = { close: () => {} };
   // ==============================================================
-
+  const router = useRouter();
   let game = global_challenges.find((game) => game.id == params.slug);
   if (!game) game = global_challenges[1];
 
   function handleHome() {
-    window.location.href = '/';
+    router.push('/');
   }
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
   const [count, setCount] = useState(0);
