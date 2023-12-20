@@ -3,6 +3,7 @@ import { useRouter } from 'next/navigation';
 
 interface Game {
   id: number;
+  shortName: string;
   name: string;
   introduction: string;
   gameUrl: string;

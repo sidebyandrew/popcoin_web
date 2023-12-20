@@ -1,7 +1,5 @@
 'use client';
-import useBackButtonEasy from '@/hooks/useBackButtonEasy';
 import { Avatar, Image } from '@nextui-org/react';
-import { useInitData } from '@tma.js/sdk-react';
 import { SendTransactionRequest, TonConnectButton } from '@tonconnect/ui-react';
 import { useRouter } from 'next/navigation';
 
@@ -40,9 +38,9 @@ export default async function Page() {
   let router = useRouter();
   /* todo remove tma */
   // ==============================================================
-  useBackButtonEasy();
-  const initData = useInitData();
-  // const initData = { user: { firstName: 'Andy', lastName: 'Block' } };
+  // useBackButtonEasy();
+  // const initData = useInitData();
+  const initData = { user: { firstName: 'Andy', lastName: 'Block' } };
   // ==============================================================
 
   // const [tx, setTx] = useState(defaultTx);

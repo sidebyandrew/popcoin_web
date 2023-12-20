@@ -28,7 +28,7 @@ export default function ConferenceId({ params }: { params: { slug: number } }) {
   useBackButtonEasy();
   const tgInitData = useInitData();
   let miniApp = useMiniApp();
-  // ==============================================================
+  // ------------------------------------------------------------
   // const tgInitData = { user: { id: 1 } };
   // let miniApp = { close: () => {} };
   // ==============================================================
@@ -57,11 +57,11 @@ export default function ConferenceId({ params }: { params: { slug: number } }) {
     setCount(val);
   };
 
-  function clickSoloBtn() {
+  function clickSoloBtn(shortName: string | undefined) {
     const bot = new Bot('6811958485:AAHg_96h1PMJIrvbwOM9j4Pcx8uaEVK48B4');
     if (tgInitData?.user?.id) {
       bot.api
-        .sendGame(tgInitData?.user?.id, 'fruit_archer')
+        .sendGame(tgInitData?.user?.id, shortName || 'jump_3d')
         .then(() => {
           console.info('sendGame done.');
           miniApp.close();
@@ -83,8 +83,9 @@ export default function ConferenceId({ params }: { params: { slug: number } }) {
         color="default"
         radius="full"
         className="mt-10 bg-black px-28 font-bold text-white dark:bg-gray-800"
-        onClick={clickSoloBtn}
-        href="https://t.me/ThePopcoinBot?game=shoot_hoops"
+        onClick={(shortName) => {
+          clickSoloBtn(game?.shortName);
+        }}
       >
         Play Solo
       </Button>
@@ -132,7 +133,10 @@ export default function ConferenceId({ params }: { params: { slug: number } }) {
                         radius="sm"
                         color="warning"
                         className="ml-5 bg-[#FC5A05]  px-2 font-bold text-white"
-                        onPress={onOpen}
+                        onPress={() => {
+                          onClose();
+                          router.push('/tonwallet');
+                        }}
                       >
                         Deposit
                       </Button>

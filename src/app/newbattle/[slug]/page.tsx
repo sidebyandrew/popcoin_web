@@ -11,7 +11,6 @@ import {
   CardHeader,
   Divider,
   Image,
-  Link,
   Modal,
   ModalBody,
   ModalContent,
@@ -30,7 +29,7 @@ export default function ConferenceId({ params }: { params: { slug: number } }) {
   useBackButtonEasy();
   const tgInitData = useInitData();
   let miniApp = useMiniApp();
-  // ==============================================================
+  // //------------------------------------------------------------
   // const tgInitData = { user: { id: 1 } };
   // let miniApp = { close: () => {} };
   // ==============================================================
@@ -58,11 +57,11 @@ export default function ConferenceId({ params }: { params: { slug: number } }) {
     setCount(val);
   };
 
-  function clickSoloBtn() {
+  function clickSoloBtn(shortName: string | undefined) {
     const bot = new Bot('6811958485:AAHg_96h1PMJIrvbwOM9j4Pcx8uaEVK48B4');
     if (tgInitData?.user?.id) {
       bot.api
-        .sendGame(tgInitData?.user?.id, 'fruit_archer')
+        .sendGame(tgInitData?.user?.id, shortName || 'jump_3d')
         .then(() => {
           console.info('sendGame done.');
           miniApp.close();
@@ -84,7 +83,9 @@ export default function ConferenceId({ params }: { params: { slug: number } }) {
         color="default"
         radius="full"
         className="mt-10 bg-black px-20 font-bold text-white dark:bg-gray-800"
-        onClick={clickSoloBtn}
+        onClick={(shortName) => {
+          clickSoloBtn(game?.shortName);
+        }}
       >
         &nbsp;Start Matching&nbsp;
       </Button>
@@ -93,9 +94,9 @@ export default function ConferenceId({ params }: { params: { slug: number } }) {
         radius="full"
         color="warning"
         className="mt-4 bg-[#FC5A05] px-20 font-bold text-white"
-        // onPress={onOpen}
-        as={Link}
-        href="https://t.me/ThePopcoinBot?game=shoot_hoops"
+        onPress={onOpen}
+        // as={Link}
+        // href="https://t.me/ThePopcoinBot?game=shoot_hoops"
       >
         Play with Friends
       </Button>
@@ -134,7 +135,10 @@ export default function ConferenceId({ params }: { params: { slug: number } }) {
                         radius="sm"
                         color="warning"
                         className="ml-5 bg-[#FC5A05] px-2 font-bold text-white"
-                        onPress={onOpen}
+                        onPress={() => {
+                          onClose();
+                          router.push('/tonwallet');
+                        }}
                       >
                         Deposit
                       </Button>
@@ -143,77 +147,33 @@ export default function ConferenceId({ params }: { params: { slug: number } }) {
                   <Divider />
                 </Card>
 
-                <div className="mt-2 text-lg font-bold">Bet Amount</div>
-                <div>
-                  <div className="mb-2 flex items-center">
-                    <Image
-                      alt="popcoin logo"
-                      radius="sm"
-                      src="/icon/minus-square@3x.png"
-                      height={40}
-                      width={40}
-                      onClick={handleDecrement}
-                    />
-                    <div className="mx-8"> {count} </div>
-                    <Image
-                      alt="popcoin logo"
-                      radius="sm"
-                      src="/icon/add-square@3x.png"
-                      height={40}
-                      width={40}
-                      onClick={handleIncrement}
-                    />
-                  </div>
-                  <div className="ml-2 flex items-center gap-5">
-                    <div
-                      className="cursor-pointer bg-gray-800 px-3 text-white dark:bg-gray-700"
-                      onClick={() => handleSetValue(1)}
-                    >
-                      1
-                    </div>
-                    <div
-                      className="cursor-pointer bg-gray-800 px-3 text-white dark:bg-gray-700"
-                      onClick={() => handleSetValue(5)}
-                    >
-                      5
-                    </div>
-                    <div
-                      className="cursor-pointer bg-gray-800 px-3 text-white dark:bg-gray-700"
-                      onClick={() => handleSetValue(10)}
-                    >
-                      10
-                    </div>
-                  </div>
+                <div className="mt-3 flex flex-col text-small">
+                  <div className="text-lg font-bold">Rules:</div>
+                  <div>1. Place a bet to enter the battle.</div>
+                  <div>2. Compete against other players who have also bet.</div>
+                  <div>3. Win the battle to claim 90% of the total bets.</div>
                 </div>
 
-                <div className="flex flex-col items-center gap-2">
+                <div className="mt-4 flex flex-col items-center gap-2">
+                  <div className="text-md flex flex-row items-center justify-center gap-1 font-bold text-gray-600 dark:text-gray-300">
+                    Bet Amount:
+                    <Image
+                      src="/icon/toncoin@3x.png"
+                      height={21}
+                      width={21}
+                      alt="ton"
+                    />
+                    <p>x 5 </p>
+                  </div>
                   <Button
                     size="lg"
                     radius="full"
                     color="warning"
-                    className="mt-4 bg-[#FC5A05] px-20 font-bold text-white"
+                    className="mt-1 bg-[#FC5A05] px-20 font-bold text-white"
                     onPress={onClose}
                   >
-                    Create Challenge
+                    Bet and Start
                   </Button>
-                  <div className="underline">My Challenges</div>
-                </div>
-
-                <div className="mt-3 flex flex-col text-small">
-                  <div className="text-lg font-bold">Rules:</div>
-                  <div>1. Place a bet before creating a challenge.</div>
-                  <div>
-                    2. Challenges end automatically 48 hours after creation, and
-                    winners are decided based on the leaderboard.
-                  </div>
-                  <div>
-                    3. The player at the top of the leaderboard wins 90% ofthe
-                    total bets.
-                  </div>
-                  <div>
-                    4. Each player gets 5 tries in a challenge, and their rankon
-                    the leaderboard depends on their best score.
-                  </div>
                 </div>
               </ModalBody>
               <ModalFooter>
