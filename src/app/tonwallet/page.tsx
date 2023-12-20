@@ -1,6 +1,6 @@
 'use client';
 import useBackButtonEasy from '@/hooks/useBackButtonEasy';
-import { Avatar, Image } from '@nextui-org/react';
+import { Avatar, Button, Image } from '@nextui-org/react';
 import { useInitData } from '@tma.js/sdk-react';
 import {
   SendTransactionRequest,
@@ -9,8 +9,7 @@ import {
   useTonWallet,
 } from '@tonconnect/ui-react';
 import { useRouter } from 'next/navigation';
-import { useCallback, useState } from 'react';
-import ReactJson, { InteractionProps } from 'react-json-view';
+import { useState } from 'react';
 
 // In this example, we are using a predefined smart contract state initialization (`stateInit`)
 // to interact with an "EchoContract". This contract is designed to send the value back to the sender,
@@ -53,14 +52,8 @@ export default async function Page() {
   // ==============================================================
 
   const [tx, setTx] = useState(defaultTx);
-
   const wallet = useTonWallet();
-
   const [tonConnectUi] = useTonConnectUI();
-
-  const onChange = useCallback((value: InteractionProps) => {
-    setTx(value.updated_src as SendTransactionRequest);
-  }, []);
 
   return (
     <div>
@@ -92,25 +85,27 @@ export default async function Page() {
           <TonConnectButton />
         </div>
       </div>
-      <div className="send-tx-form">
-        <h3>Configure and send transaction</h3>
-
-        <ReactJson
-          theme="ocean"
-          src={defaultTx}
-          onEdit={onChange}
-          onAdd={onChange}
-          onDelete={onChange}
-        />
-
+      <div className="flex items-center justify-center">
         {wallet ? (
-          <button onClick={() => tonConnectUi.sendTransaction(tx)}>
+          <Button
+            size="lg"
+            color="default"
+            radius="full"
+            className="mt-10 bg-black font-bold text-white dark:bg-gray-800 "
+            onClick={() => tonConnectUi.sendTransaction(tx)}
+          >
             Deposit Toncoin
-          </button>
+          </Button>
         ) : (
-          <button onClick={() => tonConnectUi.openModal()}>
-            Connect wallet to deposit Toncoin
-          </button>
+          <Button
+            size="lg"
+            color="default"
+            radius="full"
+            className="mt-10 bg-black font-bold text-white dark:bg-gray-800"
+            onClick={() => tonConnectUi.openModal()}
+          >
+            Connect Wallet
+          </Button>
         )}
       </div>
     </div>
