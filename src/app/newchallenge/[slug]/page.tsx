@@ -24,17 +24,15 @@ import { useState } from 'react';
 
 export default function ConferenceId({ params }: { params: { slug: number } }) {
   // ==============================================================
-  {
-    /* todo remove tma */
-  }
+  /* todo remove tma */
   useBackButtonEasy();
   const tgInitData = useInitData();
   let miniApp = useMiniApp();
-
   // ==============================================================
   // const tgInitData = { user: { id: 1 } };
   // let miniApp = { close: () => {} };
   // ==============================================================
+
   const router = useRouter();
   let game = global_games.find((game) => game.id == params.slug);
   if (!game) game = global_games[1];

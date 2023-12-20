@@ -26,13 +26,10 @@ import { useState } from 'react';
 
 export default function ConferenceId({ params }: { params: { slug: number } }) {
   // ==============================================================
-  {
-    /* todo remove tma */
-  }
+  /* todo remove tma */
   useBackButtonEasy();
   const tgInitData = useInitData();
   let miniApp = useMiniApp();
-
   // ==============================================================
   // const tgInitData = { user: { id: 1 } };
   // let miniApp = { close: () => {} };

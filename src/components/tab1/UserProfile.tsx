@@ -1,18 +1,21 @@
+'use client';
 import { ThemeSwitch } from '@/components/theme-switch';
 import { Avatar, Image } from '@nextui-org/react';
 import { useInitData } from '@tma.js/sdk-react';
+import { useRouter } from 'next/navigation';
 
 const UserProfile = () => {
-  {
-    /* todo remove tma */
-  } // ==============================================================
+  /* todo remove tma */
+  // ==============================================================
   const initData = useInitData();
   // const initData = { user: { firstName: 'Andy', lastName: 'Block' } };
   // ==============================================================
+
   function clickAvatar(): void {
     console.info('clickAvatar');
   }
 
+  let router = useRouter();
   return (
     <>
       <div className="flex justify-between">
@@ -39,7 +42,15 @@ const UserProfile = () => {
               alt="ton"
             />
             <p className=" mx-1 font-bold">1,000</p>
-            <Image src="/icon/add@3x.png" height={18} width={18} alt="add" />
+            <Image
+              src="/icon/add@3x.png"
+              height={18}
+              width={18}
+              alt="add"
+              onClick={() => {
+                router.push('/tonwallet');
+              }}
+            />
           </div>
         </div>
         <div className="flex-item ml-auto">
