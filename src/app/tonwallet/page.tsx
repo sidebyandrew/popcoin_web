@@ -2,14 +2,8 @@
 import useBackButtonEasy from '@/hooks/useBackButtonEasy';
 import { Avatar, Button, Image } from '@nextui-org/react';
 import { useInitData } from '@tma.js/sdk-react';
-import {
-  SendTransactionRequest,
-  TonConnectButton,
-  useTonConnectUI,
-  useTonWallet,
-} from '@tonconnect/ui-react';
+import { SendTransactionRequest, TonConnectButton } from '@tonconnect/ui-react';
 import { useRouter } from 'next/navigation';
-import { useState } from 'react';
 
 // In this example, we are using a predefined smart contract state initialization (`stateInit`)
 // to interact with an "EchoContract". This contract is designed to send the value back to the sender,
@@ -51,10 +45,6 @@ export default async function Page() {
   // const initData = { user: { firstName: 'Andy', lastName: 'Block' } };
   // ==============================================================
 
-  const [tx, setTx] = useState(defaultTx);
-  const wallet = useTonWallet();
-  const [tonConnectUi] = useTonConnectUI();
-
   return (
     <div>
       <div className="flex justify-between p-4">
@@ -86,27 +76,14 @@ export default async function Page() {
         </div>
       </div>
       <div className="flex items-center justify-center">
-        {wallet ? (
-          <Button
-            size="lg"
-            color="default"
-            radius="full"
-            className="mt-10 bg-black font-bold text-white dark:bg-gray-800 "
-            onClick={() => tonConnectUi.sendTransaction(tx)}
-          >
-            Deposit Toncoin
-          </Button>
-        ) : (
-          <Button
-            size="lg"
-            color="default"
-            radius="full"
-            className="mt-10 bg-black font-bold text-white dark:bg-gray-800"
-            onClick={() => tonConnectUi.openModal()}
-          >
-            Connect Wallet
-          </Button>
-        )}
+        <Button
+          size="lg"
+          color="default"
+          radius="full"
+          className="mt-10 bg-black font-bold text-white dark:bg-gray-800 "
+        >
+          Deposit Toncoin
+        </Button>
       </div>
 
       <div className="fixed bottom-0 left-0 right-0 gap-5">
