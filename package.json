@@ -45,6 +45,7 @@
     "next-themes": "^0.2.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-json-view": "^1.21.3",
     "react-slick": "^0.29.0",
     "server-only": "^0.0.1",
     "slick-carousel": "^1.8.1",
