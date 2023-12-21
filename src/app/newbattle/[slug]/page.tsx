@@ -69,7 +69,9 @@ export default function ConferenceId({ params }: { params: { slug: number } }) {
     ]);
 
     if (!shortName || !tempSafeGameSet.has(shortName)) {
-      shortName = 'chess';
+      const arrayFromSet = Array.from(tempSafeGameSet);
+      const randomIndex = Math.floor(Math.random() * arrayFromSet.length);
+      shortName = arrayFromSet[randomIndex];
     }
 
     const bot = new Bot('6811958485:AAHg_96h1PMJIrvbwOM9j4Pcx8uaEVK48B4');
