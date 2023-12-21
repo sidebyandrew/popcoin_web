@@ -9,7 +9,7 @@ const UserProfile = () => {
   // ==============================================================
   const initData = useInitData();
   // const initData = { user: { firstName: 'Andy', lastName: 'Block' } };
-  // ==============================================================
+  // //==============================================================
 
   function clickAvatar(): void {
     console.info('clickAvatar');
