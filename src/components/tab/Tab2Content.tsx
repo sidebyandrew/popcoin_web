@@ -99,7 +99,7 @@ const boards: Board[] = [
     image: '/artwork/Card1.png',
     title: 'Color Balls',
     count: '800/1000',
-    date: '04/12 -31/12/2023',
+    date: '04/12/23 -31/12/2023',
     users: users1,
   },
   {
@@ -107,7 +107,7 @@ const boards: Board[] = [
     image: '/artwork/Card2.png',
     title: 'Space Navigator',
     count: '800/1000',
-    date: '04/12 - 31/12/2023',
+    date: '04/12/23 - 31/12/2023',
     users: users2,
   },
   {
@@ -115,7 +115,7 @@ const boards: Board[] = [
     image: '/artwork/Card3.png',
     title: 'Chess',
     count: '800/1000',
-    date: '04/1 - 31/1/2024',
+    date: '04/01/24 - 31/01/2024',
     users: users1,
   },
   {
@@ -138,9 +138,9 @@ const Tab1Content: React.FC = () => (
           <div className="group relative">
             <img
               src={board.image}
-              className="mb-2 h-44 w-full rounded object-cover"
+              className="mb-2 h-44 w-36 rounded object-cover"
             />
-            <div className="absolute bottom-0 left-0 w-full bg-black bg-opacity-50 p-4 text-white">
+            <div className="absolute bottom-0 left-0 w-full bg-black bg-opacity-50 text-white">
               <p className="text-md font-bold">{board.title}</p>
               <p className="text-sm font-medium">{board.count}</p>
               <p className="text-xs">{board.date}</p>
