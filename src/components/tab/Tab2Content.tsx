@@ -23,7 +23,7 @@ const Tab1Content: React.FC = () => (
                   viewBox="0 0 24 24"
                   strokeWidth={1.5}
                   stroke="currentColor"
-                  className=" h-[19px] w-[19px]"
+                  className=" h-[19px] w-[19px] "
                 >
                   <path
                     strokeLinecap="round"
