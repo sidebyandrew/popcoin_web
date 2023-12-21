@@ -23,6 +23,7 @@ import { Bot } from 'grammy';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export default function ConferenceId({ params }: { params: { slug: number } }) {
   // ==============================================================
