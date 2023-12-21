@@ -50,8 +50,8 @@ const defaultTx: SendTransactionRequest = {
 
 export default async function Page() {
   let router = useRouter();
-  /* todo remove tma */
-  // ==============================================================
+  /* todo remove tma  */
+  // //==============================================================
   useBackButtonEasy();
   const initData = useInitData();
   // const initData = { user: { firstName: 'Andy', lastName: 'Block' } };

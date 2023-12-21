@@ -71,6 +71,7 @@ const Tab1Content: React.FC = () => {
           <div className=" flex basis-1/4 items-end justify-end ">
             <Image
               alt=" logo"
+              radius={'none'}
               src={`/icon/${theme}-history.png`}
               height={20}
               width={20}

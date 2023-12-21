@@ -21,6 +21,8 @@ import { useInitData, useMiniApp } from '@tma.js/sdk-react';
 import { Bot } from 'grammy';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export default function ConferenceId({ params }: { params: { slug: number } }) {
   // ==============================================================
@@ -83,9 +85,16 @@ export default function ConferenceId({ params }: { params: { slug: number } }) {
       console.error('CAN NOT GET TG USER ID', JSON.stringify(tgInitData));
     }
   }
+  const notify = () =>
+    toast.success('Challenge Created.', {
+      className: 'bg-gray-300 dark:bg-gray-900',
+    });
 
   return (
     <div className="flex h-screen flex-col items-center justify-center ">
+      <div>
+        <ToastContainer />
+      </div>
       <Avatar radius="sm" size={'lg'} src={game.imageUrl} />
       <div className="mt-2 text-2xl font-bold">{game.name}</div>
       <Button
@@ -204,7 +213,10 @@ export default function ConferenceId({ params }: { params: { slug: number } }) {
                     radius="full"
                     color="warning"
                     className="mt-4 bg-[#FC5A05]  px-20 font-bold text-white"
-                    onPress={onClose}
+                    onPress={() => {
+                      onClose();
+                      notify();
+                    }}
                   >
                     Create Challenge
                   </Button>
