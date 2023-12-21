@@ -1,6 +1,18 @@
 'use client';
+import {
+  Avatar,
+  Button,
+  Card,
+  CardBody,
+  Image,
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+  Tab,
+  Tabs,
+} from '@nextui-org/react';
+
 import useBackButtonEasy from '@/hooks/useBackButtonEasy';
-import { Avatar, Button, Image } from '@nextui-org/react';
 import { useInitData } from '@tma.js/sdk-react';
 import { SendTransactionRequest, TonConnectButton } from '@tonconnect/ui-react';
 import { useRouter } from 'next/navigation';
@@ -75,15 +87,85 @@ export default async function Page() {
           <TonConnectButton />
         </div>
       </div>
-      <div className="flex items-center justify-center">
-        <Button
-          size="lg"
-          color="default"
-          radius="full"
-          className="mt-10 bg-black font-bold text-white dark:bg-gray-800 "
-        >
-          Deposit Toncoin
-        </Button>
+
+      <div className="flex w-full flex-col">
+        <Tabs aria-label="Options">
+          <Tab key="deposit" title="Deposit">
+            <Card>
+              <CardBody>
+                <Popover placement="bottom" showArrow={true}>
+                  <PopoverTrigger>
+                    <Button
+                      size="lg"
+                      color="default"
+                      radius="sm"
+                      className=" bg-[#FC5A05] font-bold text-white "
+                    >
+                      Deposit Toncoin
+                    </Button>
+                  </PopoverTrigger>
+                  <PopoverContent>
+                    <div className="px-1 py-2">
+                      <div className="text-small font-bold">
+                        Under construction, stay tuned!
+                      </div>
+                    </div>
+                  </PopoverContent>
+                </Popover>
+              </CardBody>
+            </Card>
+          </Tab>
+          <Tab key="withdraw" title="Withdraw">
+            <Card>
+              <CardBody>
+                <Popover placement="bottom" showArrow={true}>
+                  <PopoverTrigger>
+                    <Button
+                      size="lg"
+                      color="default"
+                      radius="sm"
+                      className=" bg-[#FC5A05] font-bold text-white "
+                    >
+                      Withdraw Toncoin
+                    </Button>
+                  </PopoverTrigger>
+                  <PopoverContent>
+                    <div className="px-1 py-2">
+                      <div className="text-small font-bold">
+                        Under construction, stay tuned!
+                      </div>
+                    </div>
+                  </PopoverContent>
+                </Popover>
+              </CardBody>
+            </Card>
+          </Tab>
+          <Tab key="swap" title="Swap">
+            <Card>
+              <CardBody>
+                <Popover placement="bottom" showArrow={true}>
+                  <PopoverTrigger>
+                    <Button
+                      size="lg"
+                      color="default"
+                      radius="sm"
+                      className=" bg-[#FC5A05] font-bold text-white "
+                    >
+                      Swap Toncoin
+                    </Button>
+                  </PopoverTrigger>
+                  <PopoverContent>
+                    <div className="px-1 py-2">
+                      <div className="text-small font-bold">
+                        Under construction, stay tuned!
+                      </div>
+                    </div>
+                  </PopoverContent>
+                </Popover>
+              </CardBody>
+            </Card>
+          </Tab>
+        </Tabs>
       </div>
 
       <div className="fixed bottom-0 left-0 right-0 gap-5">
