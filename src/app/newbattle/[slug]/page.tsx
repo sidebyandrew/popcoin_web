@@ -157,7 +157,7 @@ export default function ConferenceId({ params }: { params: { slug: number } }) {
                         size="sm"
                         radius="sm"
                         color="warning"
-                        className="ml-5 bg-[#FC5A05] px-2 font-bold text-white"
+                        className="ml-auto bg-[#FC5A05] px-2 font-bold text-white"
                         onPress={() => {
                           onClose();
                           router.push('/tonwallet');

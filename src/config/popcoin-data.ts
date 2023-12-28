@@ -1,3 +1,20 @@
+export interface Board {
+  id: number;
+  image: string;
+  title: string;
+  count: string;
+  date: string;
+  users: User[];
+}
+
+export interface User {
+  id: number;
+  rank: number;
+  img: string;
+  name: string;
+  score: string;
+}
+
 export const global_games = [
   {
     id: 1,
@@ -349,5 +366,115 @@ export const global_challenges = [
     gameUrl:
       'https://h5game-1256660609.cos.ap-guangzhou.myqcloud.com/vs/xzk/web/index.html',
     imageUrl: '/game/brick.png',
+  },
+];
+
+const users1: User[] = [
+  {
+    id: 1,
+    rank: 1,
+    img: '/avatar/Ellipse1.png',
+    name: 'Gloria',
+    score: '15,233',
+  },
+  {
+    id: 2,
+    rank: 2,
+    img: '/avatar/Ellipse2.png',
+    name: 'Ross',
+    score: '11,000',
+  },
+  {
+    id: 3,
+    rank: 3,
+    img: '/avatar/Ellipse3.png',
+    name: 'Gabrielle',
+    score: '10,233',
+  },
+  {
+    id: 4,
+    rank: 4,
+    img: '/avatar/Ellipse4.png',
+    name: 'Andrew',
+    score: '9,000',
+  },
+  {
+    id: 5,
+    rank: 5,
+    img: '/avatar/Ellipse5.png',
+    name: 'Kitty',
+    score: '8,123',
+  },
+];
+const users2: User[] = [
+  {
+    id: 1,
+    rank: 1,
+    img: '/avatar/Ellipse6.png',
+    name: 'Andy Liu',
+    score: '15,233',
+  },
+  {
+    id: 2,
+    rank: 2,
+    img: '/avatar/Ellipse7.png',
+    name: 'Bruce',
+    score: '11,000',
+  },
+  {
+    id: 3,
+    rank: 3,
+    img: '/avatar/Ellipse8.png',
+    name: 'Luck',
+    score: '10,233',
+  },
+  {
+    id: 4,
+    rank: 4,
+    img: '/avatar/Ellipse9.png',
+    name: 'Judy',
+    score: '9,000',
+  },
+  {
+    id: 5,
+    rank: 5,
+    img: '/avatar/Ellipse10.png',
+    name: 'Kitty',
+    score: '8,123',
+  },
+];
+
+export const boards: Board[] = [
+  {
+    id: 1,
+    image: '/artwork/Card1.png',
+    title: 'Color Balls',
+    count: '910/1000',
+    date: '04/12/23 -31/12/2023',
+    users: users1,
+  },
+  {
+    id: 2,
+    image: '/artwork/Card2.png',
+    title: 'Space Navigator',
+    count: '890/1000',
+    date: '04/12/23 - 31/12/2023',
+    users: users2,
+  },
+  {
+    id: 3,
+    image: '/artwork/Card3.png',
+    title: 'Chess',
+    count: '780/1000',
+    date: '04/01/24 - 31/01/2024',
+    users: users1,
+  },
+  {
+    id: 4,
+    image: '/artwork/Card4.png',
+    title: 'Popstar',
+    count: '650/1000',
+    date: '04/12/24 - 31/12/2023',
+    users: users2,
   },
 ];
