@@ -93,7 +93,14 @@ const Tab1Content: React.FC = () => {
                   <div className="flex-item">{user.score}</div>
                 </div>
               ))}
-              <div className="text-center text-sm underline">See all</div>
+              <div
+                className="cursor-pointer text-center text-sm underline"
+                onClick={() => {
+                  router.push('/competition/' + board.id);
+                }}
+              >
+                See all
+              </div>
             </div>
           </div>
         ))}
