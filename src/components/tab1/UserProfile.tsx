@@ -1,7 +1,8 @@
 'use client';
 import { ThemeSwitch } from '@/components/theme-switch';
-import { Avatar, Image } from '@nextui-org/react';
+import { Image } from '@nextui-org/react';
 import { useInitData } from '@tma.js/sdk-react';
+import { TonConnectButton } from '@tonconnect/ui-react';
 import { useRouter } from 'next/navigation';
 
 const UserProfile = () => {
