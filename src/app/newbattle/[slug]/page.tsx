@@ -2,6 +2,7 @@
 import { ThemeSwitch } from '@/components/theme-switch';
 import { global_challenges } from '@/config/popcoin-data';
 
+import { bot_token } from '@/config/bot-config';
 import useBackButtonEasy from '@/hooks/useBackButtonEasy';
 import {
   Avatar,
@@ -74,7 +75,7 @@ export default function ConferenceId({ params }: { params: { slug: number } }) {
       shortName = arrayFromSet[randomIndex];
     }
 
-    const bot = new Bot('6811958485:AAHg_96h1PMJIrvbwOM9j4Pcx8uaEVK48B4');
+    const bot = new Bot(bot_token);
     if (tgInitData?.user?.id) {
       bot.api
         .sendGame(tgInitData?.user?.id, shortName || 'meta_winner')
