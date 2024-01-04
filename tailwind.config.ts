@@ -15,7 +15,7 @@ const config: Config = {
     extend: {
       colors: {
         black: '#000000',
-        blur: 'rgba(0, 0, 0, 0.5)', // 设置毛玻璃效果的颜色
+        blur: 'rgba(0, 0, 0, 0.5)',
       },
       keyframes: {
         heartbeat: {
