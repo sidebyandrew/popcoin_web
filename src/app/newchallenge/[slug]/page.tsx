@@ -1,5 +1,4 @@
 'use client';
-import { ThemeSwitch } from '@/components/theme-switch';
 import { bot_token } from '@/config/bot-config';
 import { global_games } from '@/config/popcoin-data';
 import useBackButtonEasy from '@/hooks/useBackButtonEasy';
@@ -14,7 +13,6 @@ import {
   Modal,
   ModalBody,
   ModalContent,
-  ModalFooter,
   ModalHeader,
   useDisclosure,
 } from '@nextui-org/react';
@@ -27,7 +25,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 export default function ConferenceId({ params }: { params: { slug: number } }) {
   // ==============================================================
-  /* todo remove tma */
+  // /* todo remove tma */
   useBackButtonEasy();
   const tgInitData = useInitData();
   let miniApp = useMiniApp();
@@ -121,7 +119,7 @@ export default function ConferenceId({ params }: { params: { slug: number } }) {
         Create Challenge
       </Button>
 
-      <Modal isOpen={isOpen} onOpenChange={onOpenChange}>
+      <Modal size={'xs'} isOpen={isOpen} onOpenChange={onOpenChange}>
         <ModalContent>
           {(onClose) => (
             <>
@@ -243,9 +241,6 @@ export default function ConferenceId({ params }: { params: { slug: number } }) {
                   </div>
                 </div>
               </ModalBody>
-              <ModalFooter>
-                <ThemeSwitch />
-              </ModalFooter>
             </>
           )}
         </ModalContent>
