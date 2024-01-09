@@ -31,7 +31,7 @@ export default function ConferenceId({ params }: { params: { slug: number } }) {
   useBackButtonEasy();
   const tgInitData = useInitData();
   let miniApp = useMiniApp();
-  // ------------------------------------------------------------
+  // //------------------------------------------------------------
   // const tgInitData = { user: { id: 1 } };
   // let miniApp = { close: () => {} };
   // ==============================================================
