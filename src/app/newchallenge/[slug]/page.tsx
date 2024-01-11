@@ -154,7 +154,7 @@ export default function ConferenceId({ params }: { params: { slug: number } }) {
         Create Challenge
       </Button>
 
-      <Modal size={'xs'} isOpen={isOpen} onOpenChange={onOpenChange}>
+      <Modal size={'md'} isOpen={isOpen} onOpenChange={onOpenChange}>
         <ModalContent>
           {(onClose) => (
             <>
