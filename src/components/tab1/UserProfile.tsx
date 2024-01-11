@@ -20,13 +20,6 @@ const UserProfile = () => {
   return (
     <>
       <div className="flex justify-between">
-        {/*<div className="flex-item pr-3 pt-1" onClick={clickAvatar}>*/}
-        {/*  <Avatar*/}
-        {/*    size={'lg'}*/}
-        {/*    src="https://i.pravatar.cc/150?u=a042581f4e29026024d"*/}
-        {/*  />*/}
-        {/*</div>*/}
-
         <div className="flex flex-col">
           <div className="text-lg font-bold">
             {initData?.user?.firstName}&nbsp;

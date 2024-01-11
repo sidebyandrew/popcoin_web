@@ -5,10 +5,6 @@ import useBackButtonEasy from '@/hooks/useBackButtonEasy';
 import {
   Avatar,
   Button,
-  Card,
-  CardBody,
-  CardHeader,
-  Divider,
   Image,
   Modal,
   ModalBody,
@@ -17,15 +13,51 @@ import {
   useDisclosure,
 } from '@nextui-org/react';
 import { useInitData, useMiniApp } from '@tma.js/sdk-react';
+import {
+  CHAIN,
+  SendTransactionRequest,
+  TonConnectButton,
+  useTonConnectUI,
+  useTonWallet,
+} from '@tonconnect/ui-react';
 import { Bot } from 'grammy';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
+// In this example, we are using a predefined smart contract state initialization (`stateInit`)
+// to interact with an "EchoContract". This contract is designed to send the value back to the sender,
+// serving as a testing tool to prevent users from accidentally spending money.
+const defaultTx: SendTransactionRequest = {
+  // The transaction is valid for 10 minutes from now, in unix epoch seconds.
+  validUntil: Math.floor(Date.now() / 1000) + 600,
+  network: CHAIN.MAINNET,
+
+  messages: [
+    {
+      // The receiver's address.
+      address:
+        '0:4ea29e0017d44d8760c6d4dd7265fcc5336f2f64d52546302d8e984e11531dd2',
+      // Amount to send in nanoTON. For example, 0.005 TON is 5000000 nanoTON.
+      amount: '5000000',
+      // (optional) Payload in boc base64 format.
+    },
+
+    // Uncomment the following message to send two messages in one transaction.
+    /*
+    {
+      // Note: Funds sent to this address will not be returned back to the sender.
+      address: '0:2ecf5e47d591eb67fa6c56b02b6bb1de6a530855e16ad3082eaa59859e8d5fdc',
+      amount: toNano('0.01').toString(),
+    }
+    */
+  ],
+};
+
 export default function ConferenceId({ params }: { params: { slug: number } }) {
   // ==============================================================
-  // /* todo remove tma */
+  /* todo remove tma */
   useBackButtonEasy();
   const tgInitData = useInitData();
   let miniApp = useMiniApp();
@@ -33,6 +65,9 @@ export default function ConferenceId({ params }: { params: { slug: number } }) {
   // const tgInitData = { user: { id: 1 } };
   // let miniApp = { close: () => {} };
   // ==============================================================
+  const [tx, setTx] = useState(defaultTx);
+  const wallet = useTonWallet();
+  const [tonConnectUi] = useTonConnectUI();
 
   const router = useRouter();
   let game = global_games.find((game) => game.id == params.slug);
@@ -87,7 +122,7 @@ export default function ConferenceId({ params }: { params: { slug: number } }) {
     }
   }
   const notify = () =>
-    toast.success('Challenge Created.', {
+    toast.info('Open TON wallet to connect.', {
       className: 'bg-gray-300 dark:bg-gray-900',
     });
 
@@ -125,45 +160,10 @@ export default function ConferenceId({ params }: { params: { slug: number } }) {
             <>
               <ModalHeader className="flex flex-col gap-1"></ModalHeader>
               <ModalBody>
-                <Card className="max-w-[400px]">
-                  <CardHeader className="gap-3">
-                    <div className="flex items-center justify-between">
-                      <div className="text-md flex items-center  text-left font-bold">
-                        <div>Balance</div>
-                      </div>
-                    </div>
-                  </CardHeader>
-                  <Divider />
-                  <CardBody>
-                    <div className="flex items-center gap-2 ">
-                      <Image
-                        alt="popcoin logo"
-                        radius="sm"
-                        src="/icon/toncoin@3x.png"
-                        height={40}
-                        width={40}
-                      />
-                      <div className="text-2xl font-bold">1,256</div>
-                      <div className="text-gray-600 dark:text-gray-500">
-                        Toncoin
-                      </div>
-
-                      <Button
-                        size="sm"
-                        radius="sm"
-                        color="warning"
-                        className="ml-5 bg-[#FC5A05]  px-2 font-bold text-white"
-                        onPress={() => {
-                          onClose();
-                          router.push('/tonwallet');
-                        }}
-                      >
-                        Deposit
-                      </Button>
-                    </div>
-                  </CardBody>
-                  <Divider />
-                </Card>
+                {/* wallet */}
+                <div className="m-auto">
+                  {wallet ? <TonConnectButton /> : <></>}
+                </div>
 
                 <div className="mt-2 text-lg font-bold">Bet Amount</div>
                 <div>
@@ -209,18 +209,26 @@ export default function ConferenceId({ params }: { params: { slug: number } }) {
                 </div>
 
                 <div className="flex flex-col items-center gap-2">
-                  <Button
-                    size="lg"
-                    radius="full"
-                    color="warning"
-                    className="mt-4 bg-[#FC5A05]  px-20 font-bold text-white"
-                    onPress={() => {
-                      onClose();
-                      notify();
-                    }}
-                  >
-                    Create Challenge
-                  </Button>
+                  {wallet ? (
+                    <Button
+                      size="lg"
+                      radius="full"
+                      color="warning"
+                      className="mt-4 bg-[#FC5A05]  px-20 font-bold text-white"
+                      onPress={async () => {
+                        let sendTransactionResponse =
+                          tonConnectUi.sendTransaction(tx);
+
+                        // onClose();
+                        notify();
+                      }}
+                    >
+                      Create Challenge
+                    </Button>
+                  ) : (
+                    <TonConnectButton />
+                  )}
+
                   <div className="underline">My Challenges</div>
                 </div>
 
@@ -232,12 +240,12 @@ export default function ConferenceId({ params }: { params: { slug: number } }) {
                     winners are decided based on the leaderboard.
                   </div>
                   <div>
-                    3. The player at the top of the leaderboard wins 90% ofthe
+                    3. The player at the top of the leaderboard wins 90% of the
                     total bets.
                   </div>
                   <div>
-                    4. Each player gets 5 tries in a challenge, and their rankon
-                    the leaderboard depends on their best score.
+                    4. Each player gets 5 tries in a challenge, and their rank
+                    on the leaderboard depends on their best score.
                   </div>
                 </div>
               </ModalBody>
