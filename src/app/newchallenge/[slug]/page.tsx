@@ -58,7 +58,7 @@ const defaultTx: SendTransactionRequest = {
 export default function ConferenceId({ params }: { params: { slug: number } }) {
   // ==============================================================
   /* todo remove tma */
-  useBackButtonEasy();
+  // useBackButtonEasy();
   const tgInitData = useInitData();
   let miniApp = useMiniApp();
   // //------------------------------------------------------------
