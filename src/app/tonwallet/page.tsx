@@ -70,7 +70,6 @@ export default async function Page() {
     //
     //   <div className="flex w-full flex-col">
     //     <Tabs aria-label="Options">
-    //       <Tab key="deposit" title="Deposit">
     //         <Card>
     //           <CardBody>
     //             <Popover placement="bottom" showArrow={true}>
@@ -81,7 +80,6 @@ export default async function Page() {
     //                   radius="sm"
     //                   className=" bg-[#FC5A05] font-bold text-white "
     //                 >
-    //                   Deposit Toncoin
     //                 </Button>
     //               </PopoverTrigger>
     //               <PopoverContent>

@@ -110,19 +110,8 @@ export default function Com({ params }: { params: { slug: number } }) {
                 height={40}
                 width={40}
               />
-              <div className="text-2xl font-bold">1,256</div>
+              <div className="text-2xl font-bold">126</div>
               <div className="text-gray-600 dark:text-gray-500">Toncoin</div>
-              <Button
-                size="sm"
-                radius="sm"
-                color="warning"
-                className="ml-auto bg-[#FC5A05] px-2 font-bold text-white"
-                onPress={() => {
-                  router.push('/tonwallet');
-                }}
-              >
-                Deposit
-              </Button>
             </div>
           </CardBody>
           <Divider />
