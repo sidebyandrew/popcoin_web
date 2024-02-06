@@ -62,7 +62,7 @@ const Tab4Content: React.FC = () => {
   const { theme, setTheme } = useTheme();
   return (
     <>
-      <Card className="max-w-[400px]">
+      <Card className="max-w-[400px] mx-auto">
         <CardHeader className="flex flex-row justify-between gap-1">
           <div className="text-md basis-3/4 text-left font-bold">
             Popcoin Points
