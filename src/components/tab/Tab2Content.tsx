@@ -1,14 +1,13 @@
-// Tab1Content.tsx
 import { boards } from '@/config/popcoin-data';
 import { Avatar, Image } from '@nextui-org/react';
 import { useRouter } from 'next/navigation';
 import React from 'react';
 
-const Tab1Content: React.FC = () => {
+const Tab2Content: React.FC = () => {
   let router = useRouter();
 
   return (
-    <>
+    <div className="p-4">
       <div className="mb-3 text-2xl font-bold">Competitions</div>
 
       <div className="mb-20">
@@ -105,8 +104,8 @@ const Tab1Content: React.FC = () => {
           </div>
         ))}
       </div>
-    </>
+    </div>
   );
 };
 
-export default Tab1Content;
+export default Tab2Content;

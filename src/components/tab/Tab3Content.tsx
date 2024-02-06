@@ -1,6 +1,5 @@
-'use client';
-// Tab1Content.tsx
-import { ThemeSwitch } from '@/components/theme-switch';
+"use client";
+import { ThemeSwitch } from "@/components/theme-switch";
 import {
   Button,
   Card,
@@ -8,141 +7,68 @@ import {
   CardFooter,
   CardHeader,
   Divider,
-  Image,
-} from '@nextui-org/react';
-import { useTheme } from 'next-themes';
-import React from 'react';
+  Image
+} from "@nextui-org/react";
+import React from "react";
+import { Avatar } from "@nextui-org/avatar";
+import { useTheme } from "next-themes";
 
-interface Task {
-  id: number;
-  introduction: string;
-  steps?: string;
-  imageUrl: string;
-  points: number;
-}
-
-const tasks: Task[] = [
-  {
-    id: 1,
-    introduction: 'Participate in 10 challenges',
-    steps: '1/10',
-    imageUrl: '/icon/Earn Points 1@3x.png',
-    points: 1000,
-  },
-
-  {
-    id: 2,
-    introduction: 'Participate in 10 PvP battles',
-    steps: '1/10',
-    imageUrl: '/icon/Earn Points 2@3x.png',
-    points: 1000,
-  },
-
-  {
-    id: 3,
-    introduction: 'Join our Discord server',
-    imageUrl: '/icon/Earn Points 3@3x.png',
-    points: 3000,
-  },
-
-  {
-    id: 4,
-    introduction: 'Follow us on X (Twitter)',
-    imageUrl: '/icon/Earn Points 4@3x.png',
-    points: 5000,
-  },
-
-  {
-    id: 5,
-    introduction: 'Join our channel',
-    imageUrl: '/icon/Earn Points 5@3x.png',
-    points: 5000,
-  },
-];
-const Tab1Content: React.FC = () => {
+const Tab3Content: React.FC = () => {
   const { theme, setTheme } = useTheme();
   return (
-    <>
-      <Card className="max-w-[400px]">
-        <CardHeader className="flex flex-row justify-between gap-1">
-          <div className="text-md basis-3/4 text-left font-bold">
-            Popcoin Points
-          </div>
-          <div className=" flex basis-1/4 items-end justify-end ">
-            <Image
-              alt=" logo"
-              radius={'none'}
-              src={`/icon/${theme}-history.png`}
-              height={20}
-              width={20}
-            />
-          </div>
-        </CardHeader>
-        <Divider />
-        <CardBody>
-          <div className="flex gap-2">
-            <div>
-              <Image
-                alt="popcoin logo"
-                radius="sm"
-                src="/icon/popcoin@3x.png"
-                height={40}
-                width={40}
-              />
-            </div>
-            <div className="text-4xl font-bold">50,256</div>
-          </div>
-        </CardBody>
-        <Divider />
-        <CardFooter>
-          <p className="text-sm text-gray-600 dark:text-gray-400">
-            Strive to earn points, and you will enjoy the airdrop benefits of
-            Popcoin in the future!
-          </p>
-        </CardFooter>
-      </Card>
-      <div className="mb-3 mt-2 text-2xl font-bold">Earn Points</div>
-      {tasks.map((task) => (
-        <div key={task.id} className="m-1 flex justify-between  p-1">
-          <div className="flex-item pr-3 pt-1">
-            <Image
-              src={task.imageUrl}
-              height={40}
-              width={40}
-              alt={task.introduction}
-            />
-          </div>
+    <div>
 
-          <div className="flex-item flex flex-col">
-            <div className="whitespace-nowrap text-sm font-bold">
-              {task.introduction}
-            </div>
-            <div className="flex text-sm text-gray-500 ">
-              <Image src="/icon/pop.png" height={16} width={16} alt="pop" />
-              <div className="ml-1">+{task.points} Points</div>
-            </div>
+      {/*  head start*/}
+      <div className="flex justify-between p-4">
+        <div className="flex flex-col">
+          <div className="text-lg font-bold">
+            <Avatar src="/icon/andrew.png" />
+            <div className="text-3xl font-bold">Badge Wall</div>
           </div>
-          <div className="flex-item ml-auto">
-            <Button size="sm" color="default" className="font-bold  ">
-              Go
-            </Button>
+          <div className="flex items-center text-sm">
+            <Image src={theme === "dark" ? "/icon/badge_white.png" : "/icon/badge_black.png"} height={25} width={25}
+                   alt="pop" radius={"full"} />
+            <p className=" font-bold">Badge count</p>
+          </div>
+          <div>
+            <div className="ml-1 font-extrabold text-3xl ">8</div>
           </div>
         </div>
-      ))}
-      <div className=" mb-10 mt-4 flex flex-col items-center justify-center">
-        <div className="text-lg font-bold">Airdrop Counting Down</div>
-        <div className="text-sm text-gray-600 dark:text-gray-500">
-          Unlock the door to a future $PPC airdrop with your Popcoin points! The
-          more points you earn, the closer you are to a big surprise!
+        <div className="flex-item ml-auto">
+          <Image src="/icon/badge_blink.png" height={121} width={121} alt="badge_blink" />
         </div>
       </div>
-      <div className="mb-10 flex justify-end">
-        <div className=" ">
-          <ThemeSwitch />
+      {/*  head end*/}
+
+      {/*  badge wall start */}
+
+      <div className="dark:bg-stone-950 mt-2 ">
+      <div className="grid grid-cols-2 gap-4 pt-5 mb-5">
+        <div className="flex flex-col items-center">
+          <Image src="/icon/badge_RisingStar.png" height={121} width={121} alt="badge_blink" />
+          <div  className="mt-4 text-xl font-extrabold">Rising Star</div>
+        </div>
+        <div className="flex flex-col items-center">
+          <Image src="/icon/badge_FriendshipMAX.png" height={121} width={121} alt="badge_blink" />
+          <div className="mt-4 text-xl font-extrabold">Friendship MAX</div>
+        </div>
+        <div className="flex flex-col items-center">
+          <Image src="/icon/badge_FrontRunner.png" height={121} width={121} alt="badge_blink" />
+          <div  className="mt-4 text-xl font-extrabold">Front Runner</div>
+        </div>
+        <div className="flex flex-col items-center mb-9">
+          <Image src="/icon/badge_RecordKeeper.png" height={121} width={121} alt="badge_blink" />
+          <div  className="mt-4 text-xl font-extrabold">Record Keeper</div>
         </div>
       </div>
-    </>
+      </div>
+
+
+
+      {/*  badge wall end */}
+
+    </div>
   );
 };
 
-export default Tab1Content;
+export default Tab3Content;
