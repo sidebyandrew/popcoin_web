@@ -61,7 +61,7 @@ const tasks: Task[] = [
 const Tab4Content: React.FC = () => {
   const { theme, setTheme } = useTheme();
   return (
-    <>
+    <div className="p-2">
       <Card className="max-w-[400px] mx-auto">
         <CardHeader className="flex flex-row justify-between gap-1">
           <div className="text-md basis-3/4 text-left font-bold">
@@ -140,7 +140,7 @@ const Tab4Content: React.FC = () => {
           <ThemeSwitch />
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
