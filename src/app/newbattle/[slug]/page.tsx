@@ -72,7 +72,7 @@ export default function ConferenceId({ params }: { params: { slug: number } }) {
   const [tx, setTx] = useState(defaultTx);
   const wallet = useTonWallet();
   const [tonConnectUi] = useTonConnectUI();
-
+  const [isBtnLoading, setIsBtnLoading] = useState(false);
   const router = useRouter();
   let game = global_challenges.find((game) => game.id == params.slug);
   if (!game) game = global_challenges[1];
@@ -145,8 +145,10 @@ export default function ConferenceId({ params }: { params: { slug: number } }) {
         radius="full"
         className="mt-10 bg-black px-20 font-bold text-white dark:bg-gray-800"
         onClick={(shortName) => {
+          setIsBtnLoading(true);
           clickSoloBtn(game?.shortName);
         }}
+        isLoading={isBtnLoading}
       >
         &nbsp;Start Matching&nbsp;
       </Button>
