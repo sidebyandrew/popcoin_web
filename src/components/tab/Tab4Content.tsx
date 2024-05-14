@@ -64,20 +64,12 @@ const tasks: Task[] = [
 const Tab4Content: React.FC = () => {
   const [scrollPosition, setScrollPosition] = React.useState('');
 
-
-
-
-
   function eventGo() {
     if (window) {
-
       window.addEventListener("devicemotion", function(event) {
         let eventAcceleration = event.acceleration;
-
-        setScrollPosition(JSON.stringify(event))
-
+        setScrollPosition(`x=${eventAcceleration?.x}, y=${eventAcceleration?.y}, z=${eventAcceleration?.z}`)
       }, false);
-
     }
   }
 
@@ -89,7 +81,7 @@ const Tab4Content: React.FC = () => {
   return (
     <div>
       <div>Hello Air</div>
-      <div>{scrollPosition}</div>
+      <div> scrollPosition = {scrollPosition}</div>
     </div>
   );
 };
