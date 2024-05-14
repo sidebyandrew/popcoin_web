@@ -35,13 +35,13 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark" suppressHydrationWarning>
       <body
-        className={clsx(
+         className={clsx(
           'min-h-screen bg-background font-sans antialiased',
           fontSans.variable
         )}
       >
         {/* todo remove tma */}
-        <TMAProvider headers={headersForContext}>
+        {/*<TMAProvider headers={headersForContext}>*/}
           <Providers themeProps={{ attribute: 'class', defaultTheme: 'dark' }}>
             <div className="relative flex h-screen flex-col">
               <main className="container mx-auto max-w-7xl flex-grow ">
@@ -50,7 +50,7 @@ export default function RootLayout({
             </div>
           </Providers>
           <Analytics />
-        </TMAProvider>
+        {/*</TMAProvider>*/}
       </body>
     </html>
   );

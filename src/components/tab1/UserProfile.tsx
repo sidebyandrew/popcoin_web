@@ -8,8 +8,8 @@ import { useRouter } from 'next/navigation';
 const UserProfile = () => {
   /* todo remove tma */
   // ==============================================================
-  const initData = useInitData();
-  // const initData = { user: { firstName: 'Andy', lastName: 'Block' } };
+  // const initData = useInitData();
+  const initData = { user: { firstName: 'Andy', lastName: 'Block' } };
   // //==============================================================
 
   function clickAvatar(): void {

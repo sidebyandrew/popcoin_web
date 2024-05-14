@@ -59,11 +59,11 @@ export default function ConferenceId({ params }: { params: { slug: number } }) {
   // ==============================================================
   /* todo remove tma */
   // useBackButtonEasy();
-  const tgInitData = useInitData();
-  let miniApp = useMiniApp();
+  // const tgInitData = useInitData();
+  // let miniApp = useMiniApp();
   // //------------------------------------------------------------
-  // const tgInitData = { user: { id: 1 } };
-  // let miniApp = { close: () => {} };
+  const tgInitData = { user: { id: 1 } };
+  let miniApp = { close: () => {} };
   // ==============================================================
   const [tx, setTx] = useState(defaultTx);
   const wallet = useTonWallet();
