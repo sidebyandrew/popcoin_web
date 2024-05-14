@@ -20,8 +20,8 @@ const Tab4Content: React.FC = () => {
       // @ts-ignore
       const device = await navigator.bluetooth.requestDevice(options);
       console.log('Device:', device);
-      setBlue(device)
-
+      setBlue(device.id);
+      setAudio("No audio");
 
     }
   }
