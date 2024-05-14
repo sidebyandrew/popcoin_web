@@ -68,7 +68,7 @@ const Tab4Content: React.FC = () => {
     if (window) {
       window.addEventListener("devicemotion", function(event) {
         let eventAcceleration = event.acceleration;
-        setScrollPosition(`x=${eventAcceleration?.x}, y=${eventAcceleration?.y}, z=${eventAcceleration?.z}`)
+        setScrollPosition(`x= ${eventAcceleration?.x}, y=${eventAcceleration?.y}, z=${eventAcceleration?.z}`)
       }, false);
     }
   }
