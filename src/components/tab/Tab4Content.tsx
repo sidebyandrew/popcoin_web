@@ -8,6 +8,8 @@ const Tab4Content: React.FC = () => {
   const [audio, setAudio] = React.useState('');
   const [blue, setBlue] = React.useState('');
   const [loca, setLoca] = React.useState('');
+  const [deviceOrientationEvent, setDeviceOrientationEvent] = React.useState('');
+  const [deviceMotionEvent, setDeviceMotionEvent] = React.useState('');
 
   async function eventGo() {
     if (window) {
@@ -27,6 +29,38 @@ const Tab4Content: React.FC = () => {
     if  (navigator){
       navigator.geolocation?.getCurrentPosition(showPosition)
     }
+
+    if (window.DeviceOrientationEvent) {
+      window.addEventListener('deviceorientation', function(event) {
+        const alpha = event.alpha; // Rotation around z-axis
+        const beta = event.beta;   // Rotation around x-axis
+        const gamma = event.gamma; // Rotation around y-axis
+
+        setDeviceOrientationEvent(`Alpha (z-axis): ${alpha?.toFixed(2)}°, Beta (x-axis): ${beta?.toFixed(2)}°, Gamma (y-axis): ${gamma?.toFixed(2)}°`);
+
+      });
+    } else {
+      setDeviceOrientationEvent(`Not have DeviceOrientationEvent!!!!!!`);
+    }
+
+    if (window.DeviceMotionEvent) {
+      window.addEventListener('devicemotion', function(event) {
+        const accX = event.acceleration?.x; // Acceleration along x-axis
+        const accY = event.acceleration?.y; // Acceleration along y-axis
+        const accZ = event.acceleration?.z; // Acceleration along z-axis
+
+        const rotationRateAlpha = event.rotationRate?.alpha; // Rotation rate around z-axis
+        const rotationRateBeta = event.rotationRate?.beta;   // Rotation rate around x-axis
+        const rotationRateGamma = event.rotationRate?.gamma; // Rotation rate around y-axis
+
+        setDeviceMotionEvent(`Acceleration - X: ${accX}, Y: ${accY}, Z: ${accZ}` +`Rotation Rate - Alpha: ${rotationRateAlpha}, Beta: ${rotationRateBeta}, Gamma: ${rotationRateGamma}` )
+      });
+    } else {
+      setDeviceMotionEvent("DeviceMotionEvent is not supported by this browser.");
+    }
+
+
+
   }
 
   function showPosition(position:any) {
@@ -47,6 +81,8 @@ const Tab4Content: React.FC = () => {
       <div> audio = {audio}</div>
       <div> bluetooth = {blue}</div>
       <div> location = {loca}</div>
+      <div> deviceOrientationEvent = {deviceOrientationEvent}</div>
+      <div> setDeviceMotionEvent = {deviceMotionEvent}</div>
     </div>
   );
 };
