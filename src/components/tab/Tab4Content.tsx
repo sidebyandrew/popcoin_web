@@ -1,5 +1,6 @@
 'use client';
 import React, { useEffect } from "react";
+import { Button } from "@nextui-org/react";
 
 
 const Tab4Content: React.FC = () => {
@@ -31,6 +32,7 @@ const Tab4Content: React.FC = () => {
     }
 
     if (window.DeviceOrientationEvent) {
+      setDeviceOrientationEvent("不监听 deviceorientation")
       window.addEventListener('deviceorientation', function(event) {
         const alpha = event.alpha; // Rotation around z-axis
         const beta = event.beta;   // Rotation around x-axis
@@ -44,6 +46,7 @@ const Tab4Content: React.FC = () => {
     }
 
     if (window.DeviceMotionEvent) {
+      setDeviceMotionEvent("不监听 devicemotion")
       window.addEventListener('devicemotion', function(event) {
         const accX = event.acceleration?.x; // Acceleration along x-axis
         const accY = event.acceleration?.y; // Acceleration along y-axis
@@ -73,6 +76,52 @@ const Tab4Content: React.FC = () => {
     eventGo();
   }, []);
 
+  async function processOnClick() {
+
+    try {
+
+
+      // Get access to the microphone
+      const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+
+      // Create an audio context
+      const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+      const source = audioContext.createMediaStreamSource(stream);
+
+      // Create an analyser node
+      const analyser = audioContext.createAnalyser();
+      analyser.fftSize = 256;
+
+      // Connect the source to the analyser
+      source.connect(analyser);
+
+      // Create a buffer to store the audio data
+      const bufferLength = analyser.frequencyBinCount;
+      const dataArray = new Uint8Array(bufferLength);
+
+      // Function to check for sound
+      const checkForSound = () => {
+        analyser.getByteFrequencyData(dataArray);
+        let sum = 0;
+        for (let i = 0; i < bufferLength; i++) {
+          sum += dataArray[i];
+        }
+        const average = sum / bufferLength;
+        const status = average > 10 ? 'Sound detected' : 'No sound detected';
+
+        setAudio(`Microphone status: ${status}`)
+        requestAnimationFrame(checkForSound);
+      };
+
+      // Start checking for sound
+      checkForSound();
+      setAudio('Microphone status: Listening...')
+    } catch (err) {
+      console.error('Error accessing the microphone', err);
+      setAudio('ERROR Microphone status: Error accessing the microphone')
+    }
+  }
+
   return (
     <div className={"p-6"}>
       <div>Hello Air</div>
@@ -82,7 +131,11 @@ const Tab4Content: React.FC = () => {
       <div> bluetooth = {blue}</div>
       <div> location = {loca}</div>
       <div> deviceOrientationEvent = {deviceOrientationEvent}</div>
-      <div> setDeviceMotionEvent = {deviceMotionEvent}</div>
+      <div> DeviceMotionEvent = {deviceMotionEvent}</div>
+
+      <Button color="primary" onClick={processOnClick}>
+        录音测试
+      </Button>
     </div>
   );
 };
